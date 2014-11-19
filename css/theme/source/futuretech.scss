@@ -258,6 +258,22 @@ body.high-contrast {
   background-repeat: no-repeat;
 }
 
+.v-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.v-bottom {
+  position: absolute;
+  bottom: 1em;
+}
+
+h3.v-bottom {
+  width: 100%;
+  text-align: center;
+}
+
 // Slide-specific styles  ----------------------
 
 section.title {
