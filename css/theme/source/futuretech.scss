@@ -34,6 +34,7 @@ $selectionBackgroundColor: #134674;
 
 // Extra variables for Future Tech
 $textShadowColor: #346484;
+$textShadowColorDarker: darken($textShadowColor, 50%);
 
 
 // Theme template ------------------------------
@@ -50,6 +51,13 @@ body.high-contrast {
 .reveal {
   font-size: 2.7em;
   color: #fff;
+  text-shadow:
+    2px 2px 10px $textShadowColor,
+    -2px -2px 10px $textShadowColor,
+    2px -2px 10px $textShadowColor,
+    -2px 2px 10px $textShadowColor,
+    0 -2px 10px $textShadowColor,
+    0 2px 10px $textShadowColor;
 }
 
 .reveal a:not(.image) {
@@ -76,7 +84,13 @@ body.high-contrast {
 .reveal h5,
 .reveal h6 {
   color: #fff;
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  text-shadow:
+    2px 2px 10px $textShadowColor,
+    -2px -2px 10px $textShadowColor,
+    2px -2px 10px $textShadowColor,
+    -2px 2px 10px $textShadowColor,
+    0 -2px 10px $textShadowColor,
+    0 2px 10px $textShadowColor;
 }
 
 .reveal .theme-colour {
@@ -105,6 +119,15 @@ body.high-contrast {
   font-size: 0.6em;
 }
 
+.reveal ol,
+.reveal ul {
+  list-style-position: inside;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /*width: 100%;*/
+}
+
 .reveal ul {
   margin-top: 1em;
 }
@@ -120,6 +143,12 @@ body.high-contrast {
   line-height: 1.2em;
 }
 
+.reveal ul:not(.no-bullet) li:before {
+  content: '\2022';
+  padding: 10px 20px 10px 10px;
+  text-shadow: 2px 2px 2px $textShadowColor;
+}
+
 .reveal blockquote {
   box-shadow: none;
   font-size: 1.3em;
@@ -133,9 +162,9 @@ body.high-contrast {
 }
 
 .reveal .slides section {
-  width: 984px;
-  height: 728px;
-  padding: 20px;
+  width: 964px;
+  height: 708px;
+  padding: 30px;
 }
 
 .reveal section img {
@@ -219,6 +248,10 @@ body.high-contrast {
   margin-bottom: 15px;
 }
 
+.reveal .push-down-2 {
+  margin-top: 2em;
+}
+
 // Slide-specific styles  ----------------------
 
 section.title {
@@ -244,7 +277,14 @@ section.title {
       0 3px 10px $textShadowColor,
       0 5px 10px $textShadowColor,
       0 10px 10px $textShadowColor,
-      0 20px 20px $textShadowColor;
+      0 20px 20px $textShadowColor,
+      0 -6px 10px $textShadowColor,
+      0 0 10px $textShadowColor,
+      0 -1px 10px $textShadowColor,
+      0 -3px 10px $textShadowColor,
+      0 -5px 10px $textShadowColor,
+      0 -10px 10px $textShadowColor,
+      0 -20px 20px $textShadowColor;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     span {
       display: block;
@@ -278,6 +318,11 @@ section.title {
   }
 }
 
+section.metaverse {
+  background: url(../../../img/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg) top left no-repeat;
+  background-size: 100% 100%;
+}
+
 .reveal section img.browser-logo {
   width: 320px;
   transition: transform linear 1.5s;
@@ -307,7 +352,7 @@ section.title {
 
 .reveal section img.tech-logo {
   height: 250px;
-  transition: transform ease-in 1s, opacity linear 1s;
+  transition: transform ease-in 0.5s, opacity linear 0.5s;
 
   &:nth-child(1) {
     margin-right: 30px;

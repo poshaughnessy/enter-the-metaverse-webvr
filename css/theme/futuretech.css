@@ -138,7 +138,8 @@ body.high-contrast {
 
 .reveal {
   font-size: 2.7em;
-  color: #fff; }
+  color: #fff;
+  text-shadow: 2px 2px 10px #346484, -2px -2px 10px #346484, 2px -2px 10px #346484, -2px 2px 10px #346484, 0 -2px 10px #346484, 0 2px 10px #346484; }
 
 .reveal a:not(.image) {
   line-height: 1.3em;
@@ -160,7 +161,7 @@ body.high-contrast {
 .reveal h5,
 .reveal h6 {
   color: #fff;
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+  text-shadow: 2px 2px 10px #346484, -2px -2px 10px #346484, 2px -2px 10px #346484, -2px 2px 10px #346484, 0 -2px 10px #346484, 0 2px 10px #346484; }
 
 .reveal .theme-colour {
   color: #000; }
@@ -183,6 +184,14 @@ body.high-contrast {
 .reveal p.small {
   font-size: 0.6em; }
 
+.reveal ol,
+.reveal ul {
+  list-style-position: inside;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /*width: 100%;*/ }
+
 .reveal ul {
   margin-top: 1em; }
 
@@ -195,6 +204,11 @@ body.high-contrast {
   font-size: 1.5em;
   line-height: 1.2em; }
 
+.reveal ul:not(.no-bullet) li:before {
+  content: '\2022';
+  padding: 10px 20px 10px 10px;
+  text-shadow: 2px 2px 2px #346484; }
+
 .reveal blockquote {
   box-shadow: none;
   font-size: 1.3em;
@@ -206,9 +220,9 @@ body.high-contrast {
   color: #ccc; }
 
 .reveal .slides section {
-  width: 984px;
-  height: 728px;
-  padding: 20px; }
+  width: 964px;
+  height: 708px;
+  padding: 30px; }
 
 .reveal section img {
   display: block;
@@ -270,6 +284,9 @@ body.high-contrast {
 .reveal video {
   margin-bottom: 15px; }
 
+.reveal .push-down-2 {
+  margin-top: 2em; }
+
 section.title {
   background: url(../../../img/lights-of-city-darker-more.jpg) top left no-repeat;
   /*url(../../../img/snowcrash_tantek.jpg) top left no-repeat;*/
@@ -280,7 +297,7 @@ section.title {
     line-height: 1em;
     color: #fff;
     /*text-shadow: 10px 10px 10px #225574, -10px -10px 10px #225574, 10px -10px 10px #225574, -10px 10px 10px #225574, 0 -10px 10px #225574, 0 10px 10px #225574;*/
-    text-shadow: 0 1px 0 #999999, 0 2px 0 #969696, 0 3px 0 #888888, 0 4px 0 #868686, 0 5px 0 #777777, 0 6px 10px #346484, 0 0 10px #346484, 0 1px 10px #346484, 0 3px 10px #346484, 0 5px 10px #346484, 0 10px 10px #346484, 0 20px 20px #346484;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #969696, 0 3px 0 #888888, 0 4px 0 #868686, 0 5px 0 #777777, 0 6px 10px #346484, 0 0 10px #346484, 0 1px 10px #346484, 0 3px 10px #346484, 0 5px 10px #346484, 0 10px 10px #346484, 0 20px 20px #346484, 0 -6px 10px #346484, 0 0 10px #346484, 0 -1px 10px #346484, 0 -3px 10px #346484, 0 -5px 10px #346484, 0 -10px 10px #346484, 0 -20px 20px #346484;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; }
     section.title h1 span {
       display: block; }
@@ -295,6 +312,10 @@ section.title {
     margin-bottom: 15px; }
   section.title p {
     text-shadow: 1px 1px 10px #346484, -1px -1px 10px #346484, 1px -1px 10px #346484, -1px 1px 10px #346484, 0 -1px 10px #346484, 0 1px 10px #346484; }
+
+section.metaverse {
+  background: url(../../../img/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg) top left no-repeat;
+  background-size: 100% 100%; }
 
 .reveal section img.browser-logo {
   width: 320px;
@@ -314,7 +335,7 @@ section.title {
 
 .reveal section img.tech-logo {
   height: 250px;
-  transition: transform ease-in 1s, opacity linear 1s; }
+  transition: transform ease-in 0.5s, opacity linear 0.5s; }
   .reveal section img.tech-logo:nth-child(1) {
     margin-right: 30px; }
 

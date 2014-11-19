@@ -32,45 +32,38 @@
             <section class="title">
                 <h1>Enter the Metaverse</h1>
                 <h2>Introducing Virtual Reality<br/> for the Web</h2>
-                <!--<h2>An intro to WebVR</h2>-->
                 <p class="small">Peter O'Shaughnessy <span class="subtle">|</span> <a href="https://www.twitter.com/poshaughnessy">@poshaughnessy</a></p> <!--<span class="subtle">|</span> Press <strong>f</strong> for full screen, <strong>h</strong> for high contrast</p>-->
             </section>
 
-            <!--
-            <section>
-                <h3><em>3.3 million</em> registered Unity developers<sup>1</sup></h3>
-                <h3 class="fragment"><em>8 million+</em> professional Web developers<sup>2</sup></h3>
-                <small>
-                    1. Number of registered developers <a href="http://unity3d.com/public-relations">courtesy of Unity Technologies</a><br/>
-                    2. Estimate <a href="http://www.jbidigital.co.uk/web-development/the-rise-of-web-developers-throughout-the-world/">from JBI Digital</a>
-                </small>
+            <section class="contents">
+                <ul class="push-down-2 no-bullet">
+                    <li>1. VR &amp; the Metaverse</li>
+                    <li>2. WebVR</li>
+                    <li>3. Interactivity</li>
+                    <li>4. Play time!</li>
+                </ul>
             </section>
-            -->
 
-            <section>
-                <!-- Imagine a Virtual Reality enabled Web... -->
-                <h3>Imagine the possibilities...</h3>
-                <div>
-                    <img src="img/universe_from_a_meadow_by_mind_criminal-d496i3j.jpg" alt="Strange world"/>
-                    <p class="caption"><a href="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">mind-criminal</a></p>
-                </div>
-                <!-- How about the Virtual Reality Web? -->
-                <!-- Imagine if we could make Virtual Reality a Web standard? And open up the tools to build VR experiences to all Web developers -->
+            <section class="metaverse">
+                <h3>The Metaverse</h3>
+                <ul>
+                    <li class="fragment">Interconnected virtual worlds</li>
+                    <li class="fragment">The Web + VR</li>
+                    <li class="fragment">Imagine the possibilities!</li>
+                </ul>
+            </section>
+
                 <!-- Imagine the power of Virtual Reality combined with the power of the URL -->
                 <!-- Imagine hopping from website to website in Virtual Reality - if those websites were actually immersive 3d experiences -->
                 <!-- It would be like a network of interconnected worlds... -->
                 <!-- It's the stuff of science fiction... -->
-            </section>
 
             <section>
-                <h3 class="theme-colour">VR web apps possible <em>now</em></h3>
-                <!--
-                <ul class="fragment hardware-list">
-                    <li>Oculus Rift</li>
-                    <li>Google Cardboard</li>
-                </ul>
-                -->
-                <h3 class="fragment">8 million web devs rejoice!</h3>
+                <h3>VR web apps possible <em>now</em></h3>
+                <div class="fragment">
+                    <h3>8 million web devs rejoice!</h3>
+                    <!--<small>Estimate <a href="http://www.jbidigital.co.uk/web-development/the-rise-of-web-developers-throughout-the-world/">from JBI Digital</a></small>-->
+                </div>
             </section>
 
             <section>
@@ -93,7 +86,7 @@
             </section>
 
             <section>
-                <h3 class="theme-colour">Browsers implementing:</h3>
+                <h3>&ldquo;WebVR&rdquo;</h3>
                 <ul class="more-text">
                     <li>Device discovery</li>
                     <li>Full screen extensions</li>
@@ -103,18 +96,16 @@
             </section>
 
             <section>
-                <h2 class="theme-colour">&ldquo;WebVR&rdquo;</h2>
+                <h2></h2>
                 <ul class="more-text fragment">
                     <li>"Version Zero"</li>
                     <li>Not even in alpha channels yet</li>
                 </ul>
             </section>
 
-            <!--
             <section>
                 <h2>5 min guide to WebVR development</h2>
             </section>
-            -->
 
             <section>
                 <img class="tech-logo" id="webgl-logo" src="img/webgl-logo-colouradjust.png"/>
@@ -123,7 +114,7 @@
             </section>
 
             <section>
-                <h3><span class="theme-colour">Step 1:</span> Develop WebGL app as usual</h3>
+                <h3><span>Step 1:</span> Develop WebGL app as usual</h3>
             </section>
 
             <section>
@@ -133,7 +124,7 @@
             </section>
 
             <section>
-                <h3><span class="theme-colour">Step 2:</span> Add WebVR goodness</h3>
+                <h3><span>Step 2:</span> Add WebVR goodness</h3>
             </section>
 
             <section>
@@ -141,7 +132,6 @@
                 <pre><code class="javascript">if( navigator.getVRDevices ) {
     navigator.getVRDevices().then( ... );
 }</code></pre>
-                <h5>(This is the only code I'll show - promise!)</h5>
             </section>
 
             <section>
@@ -159,7 +149,7 @@
             </section>
 
             <section>
-                <h3><span class="theme-colour">Step 3:</span> Ensure you have included at least one dinosaur</h3>
+                <h3><span>Step 3:</span> Ensure you have included at least one dinosaur</h3>
             </section>
 
             <!--
@@ -243,7 +233,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             </section>
 
             <section>
-                <h4>Just set <span class="theme-colour">transform-style: preserve-3d</span></h4>
+                <h4>Just set <span>transform-style: preserve-3d</span></h4>
                 <img src="img/css3d-globe.jpg" alt="CSS3D Globe"/>
                 <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
             </section>
@@ -260,7 +250,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             </section>
 
             <section>
-                <h3 class="theme-colour">Google Cardboard</h3>
+                <h3>Google Cardboard</h3>
                 <ul class="more-text">
                     <li>No WebVR support yet</li>
                     <li class="fragment">But we can use HTML5 Orientation API</li> <!-- And apply our own distortion if we want to... -->
@@ -292,8 +282,8 @@ var controls = new THREE.DeviceOrientationControls(
 
             <section>
                 <h3>Code examples from Google</h3>
-                <h3><a class="theme-colour" href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
-                <h3><a class="theme-colour" href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
+                <h3><a href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
+                <h3><a href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
             </section>
 
             <section>
@@ -329,9 +319,9 @@ var controls = new THREE.DeviceOrientationControls(
             <section>
                 <div>
                     <h2>Thank you.</h2>
-                    <!--<p class="medium-link">Blog post: <a class="theme-colour" href="http://bit.ly/interfaces-of-the-future">bit.ly/interfaces-of-the-future</a></p>-->
-                    <p class="medium-link">web-vr mailing list: <a class="theme-colour" href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></p>
-                    <p class="medium-link">me: <a class="theme-colour" href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
+                    <!--<p class="medium-link">Blog post: <a href="http://bit.ly/interfaces-of-the-future">bit.ly/interfaces-of-the-future</a></p>-->
+                    <p class="medium-link">web-vr mailing list: <a href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></p>
+                    <p class="medium-link">me: <a href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
                 </div>
             </section>
 
