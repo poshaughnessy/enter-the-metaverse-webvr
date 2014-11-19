@@ -1,6 +1,6 @@
 (function() {
 
-    var SLIDE_BROWSER_LOGOS = 3,
+    var SLIDE_BROWSER_LOGOS = 9,
         SLIDE_TECH_LOGOS_WEBGL = 6,
         SLIDE_TECH_LOGOS_CSS3 = 15,
         highContrastMode = false;
@@ -38,8 +38,6 @@
 
         var slideNumber = Reveal.getIndices().h;
         var fragmentNumber = Reveal.getIndices().f || 0;
-
-        console.log( fragmentNumber );
 
         if( slideNumber == SLIDE_BROWSER_LOGOS ) {
 
