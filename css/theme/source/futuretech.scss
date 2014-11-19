@@ -1,0 +1,361 @@
+/**
+ * Pearson Future Tech theme for reveal.js
+ *
+ * Based on Sky theme, copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+//@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic);
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'arial', 'helvetica', sans-serif;
+$mainColor: #333;
+$headingFont: 'Ubuntu', sans-serif;
+$headingColor: #333;
+$headingLetterSpacing: 0em;
+$headingTextShadow: none;
+$backgroundColor: #000;
+$themeColor: #000;
+$linkColor: #ccc; //lighten( $headingColor, 10% );
+$linkColorHover: lighten( $linkColor, 10% );
+$navColor: #eee;
+$navColorHover: #fff;
+$selectionBackgroundColor: #134674;
+
+// Extra variables for Future Tech
+$textShadowColor: #346484;
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+// Future Tech additions -------------------
+
+body.high-contrast {
+  background-color: #000;
+}
+
+.reveal {
+  font-size: 2.7em;
+  color: #fff;
+}
+
+.reveal a:not(.image) {
+  line-height: 1.3em;
+  color: $linkColor;
+}
+
+.reveal a:not(.image):hover {
+  color: $linkColorHover;
+}
+
+.reveal a.theme-colour:not(.image) {
+  color: $themeColor;
+}
+
+.reveal a.theme-colour:not(.image):hover {
+  color: lighten($themeColor, 10%);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #fff;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+.reveal .theme-colour {
+  color: $themeColor;
+}
+
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: 'arial', 'helvetica', sans-serif;
+  line-height: 1em;
+}
+
+.reveal h5 {
+  font-size: 0.85em;
+}
+
+.reveal h2 {
+  font-size: 2em;
+  line-height: 1.2em;
+}
+
+.reveal p.small {
+  font-size: 0.6em;
+}
+
+.reveal ul {
+  margin-top: 1em;
+}
+
+.reveal ul.more-text {
+  font-size: 0.8em;
+}
+
+.reveal li {
+  margin-bottom: 0.5em;
+  color: #fff;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.reveal blockquote {
+  box-shadow: none;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+  line-height: 1.2em;
+  background: none;
+}
+
+.reveal a {
+  color: #ccc;
+}
+
+.reveal .slides section {
+  width: 984px;
+  height: 728px;
+  padding: 20px;
+}
+
+.reveal section img {
+  display: block;
+  margin: 0 auto 0.5em auto;
+  border: 0;
+  background: none;
+  box-shadow: 0 0 0;
+
+  &.plain {
+    box-shadow: none;
+    background: none;
+  }
+
+  &.small {
+    max-height: 70%;
+  }
+
+  &.smaller {
+    max-height: 55%;
+  }
+}
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 90%;
+  max-height: 85%;
+}
+
+.reveal .controls div {
+  opacity: 0.25;
+}
+
+.reveal img.full {
+  min-width: 60%;
+  min-height: 80%;
+  width: auto;
+  height: auto;
+}
+
+.reveal .subtle {
+  color: #ddd;
+  visibility: hidden;
+}
+
+.reveal .list-intro {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+.reveal pre {
+  width: 100%;
+  font-size: 0.95em;
+
+  code {
+    padding: 10px;
+  }
+
+}
+
+.reveal .caption {
+  margin-top: -1em;
+  font-size: 0.4em;
+}
+
+.reveal .caption a {
+  color: $linkColor;
+}
+
+.reveal .medium-link {
+  font-size: 0.8em;
+}
+
+.reveal .medium-link:nth-of-type(1) {
+  margin-top: 2em;
+}
+
+.reveal video {
+  margin-bottom: 15px;
+}
+
+// Slide-specific styles  ----------------------
+
+section.title {
+
+  background: url(../../../img/lights-of-city-darker-more.jpg) top left no-repeat; /*url(../../../img/snowcrash_tantek.jpg) top left no-repeat;*/
+  background-size: 100% 100%;
+
+  h1 {
+    margin-top: 1.5em;
+    font-size: 2.2em;
+    line-height: 1em;
+    color: #fff;
+    /*text-shadow: 10px 10px 10px #225574, -10px -10px 10px #225574, 10px -10px 10px #225574, -10px 10px 10px #225574, 0 -10px 10px #225574, 0 10px 10px #225574;*/
+    text-shadow:
+      0 1px 0 darken(#ccc, 20%),
+      0 2px 0 darken(#c9c9c9, 20%),
+      0 3px 0 darken(#bbb, 20%),
+      0 4px 0 darken(#b9b9b9, 20%),
+      0 5px 0 darken(#aaa, 20%),
+      0 6px 10px $textShadowColor,
+      0 0 10px $textShadowColor,
+      0 1px 10px $textShadowColor,
+      0 3px 10px $textShadowColor,
+      0 5px 10px $textShadowColor,
+      0 10px 10px $textShadowColor,
+      0 20px 20px $textShadowColor;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    span {
+      display: block;
+    }
+  }
+  h2 {
+    margin: 1em 0;
+    line-height: 1em;
+    font-size: 1.4em;
+    font-style: italic;
+    text-shadow:
+      4px 4px 10px $textShadowColor,
+      -4px -4px 10px $textShadowColor,
+      4px -4px 10px $textShadowColor,
+      -4px 4px 10px $textShadowColor,
+      0 -4px 10px $textShadowColor,
+      0 4px 10px $textShadowColor;
+  }
+  h5 {
+    letter-spacing: 10px;
+    margin-bottom: 15px;
+  }
+  p {
+    text-shadow:
+      1px 1px 10px $textShadowColor,
+      -1px -1px 10px $textShadowColor,
+      1px -1px 10px $textShadowColor,
+      -1px 1px 10px $textShadowColor,
+      0 -1px 10px $textShadowColor,
+      0 1px 10px $textShadowColor;
+  }
+}
+
+.reveal section img.browser-logo {
+  width: 320px;
+  transition: transform linear 1.5s;
+
+  &:nth-child(1) {
+    margin-right: 10px;
+  }
+}
+
+#ff-logo {
+  transform: translateX(-1500px) rotate(-720deg);
+
+  &.animate {
+    transform: translateX(0) rotate(720deg);
+  }
+
+}
+
+#chrome-logo {
+  transform: translateX(1500px) rotate(720deg);
+
+  &.animate {
+    transform: translateX(0) rotate(-720deg)
+  }
+
+}
+
+.reveal section img.tech-logo {
+  height: 250px;
+  transition: transform ease-in 1s, opacity linear 1s;
+
+  &:nth-child(1) {
+    margin-right: 30px;
+  }
+}
+
+#webgl-logo,
+#webgl-logo2 {
+
+  &.grow {
+    transform: translateZ(150px) translateX(120px);
+  }
+
+  &.fade {
+    opacity: 0;
+  }
+
+}
+
+#css3-logo,
+#css3-logo2 {
+
+  &.grow {
+    transform: translateZ(200px) translateX(-230px);
+  }
+
+  &.fade {
+    opacity: 0;
+  }
+}
+
+.reveal section img.browser-logo,
+.reveal section img.tech-logo {
+  display: inline;
+  margin-top: 30px;
+}
+
+.reveal .threejs {
+  span {
+    font-family: 'Inconsolata';
+    font-weight: bold;
+  }
+}
+
+.reveal .hardware-list {
+  margin-top: 30px;
+}
+
+.reveal .bonus {
+  margin-bottom: 80px;
+}

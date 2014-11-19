@@ -1,0 +1,350 @@
+/**
+ * Pearson Future Tech theme for reveal.js
+ *
+ * Based on Sky theme, copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #000;
+  background-color: #000; }
+
+.reveal {
+  font-family: "arial", "helvetica", sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  color: #333; }
+
+::selection {
+  color: #fff;
+  background: #134674;
+  text-shadow: none; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-family: "Ubuntu", sans-serif;
+  line-height: 0.9em;
+  letter-spacing: 0em;
+  text-transform: none;
+  text-shadow: none; }
+
+.reveal h1 {
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a:not(.image) {
+  color: #ccc;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  -ms-transition: color .15s ease;
+  -o-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:not(.image):hover {
+  color: #e6e6e6;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #a6a6a6; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -ms-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ccc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #eee; }
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #eee; }
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #eee; }
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #eee; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #fff; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #fff; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #fff; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #fff; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #ccc;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * SLIDE NUMBER
+ *********************************************/
+.reveal .slide-number {
+  color: #ccc; }
+
+body.high-contrast {
+  background-color: #000; }
+
+.reveal {
+  font-size: 2.7em;
+  color: #fff; }
+
+.reveal a:not(.image) {
+  line-height: 1.3em;
+  color: #ccc; }
+
+.reveal a:not(.image):hover {
+  color: #e6e6e6; }
+
+.reveal a.theme-colour:not(.image) {
+  color: #000; }
+
+.reveal a.theme-colour:not(.image):hover {
+  color: #1a1a1a; }
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #fff;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+
+.reveal .theme-colour {
+  color: #000; }
+
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: 'arial', 'helvetica', sans-serif;
+  line-height: 1em; }
+
+.reveal h5 {
+  font-size: 0.85em; }
+
+.reveal h2 {
+  font-size: 2em;
+  line-height: 1.2em; }
+
+.reveal p.small {
+  font-size: 0.6em; }
+
+.reveal ul {
+  margin-top: 1em; }
+
+.reveal ul.more-text {
+  font-size: 0.8em; }
+
+.reveal li {
+  margin-bottom: 0.5em;
+  color: #fff;
+  font-size: 1.5em;
+  line-height: 1.2em; }
+
+.reveal blockquote {
+  box-shadow: none;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+  line-height: 1.2em;
+  background: none; }
+
+.reveal a {
+  color: #ccc; }
+
+.reveal .slides section {
+  width: 984px;
+  height: 728px;
+  padding: 20px; }
+
+.reveal section img {
+  display: block;
+  margin: 0 auto 0.5em auto;
+  border: 0;
+  background: none;
+  box-shadow: 0 0 0; }
+  .reveal section img.plain {
+    box-shadow: none;
+    background: none; }
+  .reveal section img.small {
+    max-height: 70%; }
+  .reveal section img.smaller {
+    max-height: 55%; }
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 90%;
+  max-height: 85%; }
+
+.reveal .controls div {
+  opacity: 0.25; }
+
+.reveal img.full {
+  min-width: 60%;
+  min-height: 80%;
+  width: auto;
+  height: auto; }
+
+.reveal .subtle {
+  color: #ddd;
+  visibility: hidden; }
+
+.reveal .list-intro {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  font-size: 1.2em; }
+
+.reveal pre {
+  width: 100%;
+  font-size: 0.95em; }
+  .reveal pre code {
+    padding: 10px; }
+
+.reveal .caption {
+  margin-top: -1em;
+  font-size: 0.4em; }
+
+.reveal .caption a {
+  color: #ccc; }
+
+.reveal .medium-link {
+  font-size: 0.8em; }
+
+.reveal .medium-link:nth-of-type(1) {
+  margin-top: 2em; }
+
+.reveal video {
+  margin-bottom: 15px; }
+
+section.title {
+  background: url(../../../img/lights-of-city-darker-more.jpg) top left no-repeat;
+  /*url(../../../img/snowcrash_tantek.jpg) top left no-repeat;*/
+  background-size: 100% 100%; }
+  section.title h1 {
+    margin-top: 1.5em;
+    font-size: 2.2em;
+    line-height: 1em;
+    color: #fff;
+    /*text-shadow: 10px 10px 10px #225574, -10px -10px 10px #225574, 10px -10px 10px #225574, -10px 10px 10px #225574, 0 -10px 10px #225574, 0 10px 10px #225574;*/
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #969696, 0 3px 0 #888888, 0 4px 0 #868686, 0 5px 0 #777777, 0 6px 10px #346484, 0 0 10px #346484, 0 1px 10px #346484, 0 3px 10px #346484, 0 5px 10px #346484, 0 10px 10px #346484, 0 20px 20px #346484;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; }
+    section.title h1 span {
+      display: block; }
+  section.title h2 {
+    margin: 1em 0;
+    line-height: 1em;
+    font-size: 1.4em;
+    font-style: italic;
+    text-shadow: 4px 4px 10px #346484, -4px -4px 10px #346484, 4px -4px 10px #346484, -4px 4px 10px #346484, 0 -4px 10px #346484, 0 4px 10px #346484; }
+  section.title h5 {
+    letter-spacing: 10px;
+    margin-bottom: 15px; }
+  section.title p {
+    text-shadow: 1px 1px 10px #346484, -1px -1px 10px #346484, 1px -1px 10px #346484, -1px 1px 10px #346484, 0 -1px 10px #346484, 0 1px 10px #346484; }
+
+.reveal section img.browser-logo {
+  width: 320px;
+  transition: transform linear 1.5s; }
+  .reveal section img.browser-logo:nth-child(1) {
+    margin-right: 10px; }
+
+#ff-logo {
+  transform: translateX(-1500px) rotate(-720deg); }
+  #ff-logo.animate {
+    transform: translateX(0) rotate(720deg); }
+
+#chrome-logo {
+  transform: translateX(1500px) rotate(720deg); }
+  #chrome-logo.animate {
+    transform: translateX(0) rotate(-720deg); }
+
+.reveal section img.tech-logo {
+  height: 250px;
+  transition: transform ease-in 1s, opacity linear 1s; }
+  .reveal section img.tech-logo:nth-child(1) {
+    margin-right: 30px; }
+
+#webgl-logo.grow,
+#webgl-logo2.grow {
+  transform: translateZ(150px) translateX(120px); }
+#webgl-logo.fade,
+#webgl-logo2.fade {
+  opacity: 0; }
+
+#css3-logo.grow,
+#css3-logo2.grow {
+  transform: translateZ(200px) translateX(-230px); }
+#css3-logo.fade,
+#css3-logo2.fade {
+  opacity: 0; }
+
+.reveal section img.browser-logo,
+.reveal section img.tech-logo {
+  display: inline;
+  margin-top: 30px; }
+
+.reveal .threejs span {
+  font-family: 'Inconsolata';
+  font-weight: bold; }
+
+.reveal .hardware-list {
+  margin-top: 30px; }
+
+.reveal .bonus {
+  margin-bottom: 80px; }
+
+/*# sourceMappingURL=futuretech.css.map */

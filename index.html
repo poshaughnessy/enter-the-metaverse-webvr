@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Intro to WebVR</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme/futuretech.css" id="theme">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+
+            <section class="title">
+                <h1>Enter the Metaverse</h1>
+                <h2>Introducing Virtual Reality<br/> for the Web</h2>
+                <!--<h2>An intro to WebVR</h2>-->
+                <p class="small">Peter O'Shaughnessy <span class="subtle">|</span> <a href="https://www.twitter.com/poshaughnessy">@poshaughnessy</a></p> <!--<span class="subtle">|</span> Press <strong>f</strong> for full screen, <strong>h</strong> for high contrast</p>-->
+            </section>
+
+            <!--
+            <section>
+                <h3><em>3.3 million</em> registered Unity developers<sup>1</sup></h3>
+                <h3 class="fragment"><em>8 million+</em> professional Web developers<sup>2</sup></h3>
+                <small>
+                    1. Number of registered developers <a href="http://unity3d.com/public-relations">courtesy of Unity Technologies</a><br/>
+                    2. Estimate <a href="http://www.jbidigital.co.uk/web-development/the-rise-of-web-developers-throughout-the-world/">from JBI Digital</a>
+                </small>
+            </section>
+            -->
+
+            <section>
+                <!-- Imagine a Virtual Reality enabled Web... -->
+                <h3>Imagine the possibilities...</h3>
+                <div>
+                    <img src="img/universe_from_a_meadow_by_mind_criminal-d496i3j.jpg" alt="Strange world"/>
+                    <p class="caption"><a href="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">mind-criminal</a></p>
+                </div>
+                <!-- How about the Virtual Reality Web? -->
+                <!-- Imagine if we could make Virtual Reality a Web standard? And open up the tools to build VR experiences to all Web developers -->
+                <!-- Imagine the power of Virtual Reality combined with the power of the URL -->
+                <!-- Imagine hopping from website to website in Virtual Reality - if those websites were actually immersive 3d experiences -->
+                <!-- It would be like a network of interconnected worlds... -->
+                <!-- It's the stuff of science fiction... -->
+            </section>
+
+            <section>
+                <h3 class="theme-colour">VR web apps possible <em>now</em></h3>
+                <!--
+                <ul class="fragment hardware-list">
+                    <li>Oculus Rift</li>
+                    <li>Google Cardboard</li>
+                </ul>
+                -->
+                <h3 class="fragment">8 million web devs rejoice!</h3>
+            </section>
+
+            <section>
+                <!-- ...But just in the last few weeks... -->
+                <!--
+                <h3>Just in the last few weeks:</h3>
+                <div class="fragment">
+                    <ul class="more-text">
+                        <li><a href="http://blog.ludei.com/webgl-ios-8-safari-webview/">Apple embrace WebGL</a></li>
+                        <li><a href="https://developers.google.com/cardboard/">Google unveil Cardboard</a></li>
+                        <li><a href="http://blog.bitops.com/blog/2014/06/26/first-steps-for-vr-on-the-web/">Mozilla release VR Firefox builds</a></li>
+                        <li><a href="http://blog.tojicode.com/2014/07/bringing-vr-to-chrome.html">Google release VR Chrome builds</a></li>
+                    </ul>
+                </div>
+                -->
+                <h3>New Web API!</h3>
+                <img class="browser-logo" id="ff-logo" src="img/Mozilla_Firefox_3.5_logo_256.png" alt="Firefox"/>
+                <img class="browser-logo" id="chrome-logo" src="img/Google_Chrome_logo.png" alt="Chrome"/>
+                <!--<h5>Available in special builds only</h5>-->
+            </section>
+
+            <section>
+                <h3 class="theme-colour">Browsers implementing:</h3>
+                <ul class="more-text">
+                    <li>Device discovery</li>
+                    <li>Full screen extensions</li>
+                    <li>Sensor integration, e.g. orientation</li>
+                    <li>Rendering for different hardware</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="theme-colour">&ldquo;WebVR&rdquo;</h2>
+                <ul class="more-text fragment">
+                    <li>"Version Zero"</li>
+                    <li>Not even in alpha channels yet</li>
+                </ul>
+            </section>
+
+            <!--
+            <section>
+                <h2>5 min guide to WebVR development</h2>
+            </section>
+            -->
+
+            <section>
+                <img class="tech-logo" id="webgl-logo" src="img/webgl-logo-colouradjust.png"/>
+                <img class="tech-logo" id="css3-logo" src="img/css3-logo.png"/>
+                <div class="fragment"><!-- This is used to kick off animation --></div>
+            </section>
+
+            <section>
+                <h3><span class="theme-colour">Step 1:</span> Develop WebGL app as usual</h3>
+            </section>
+
+            <section>
+                <h3 class="threejs">I recommend <span>three.js</span></h3>
+                <img src="img/threejs-examples.png" alt="Three.js examples"/>
+                <p class="caption"><a href="http://threejs.org">threejs.org</a></p>
+            </section>
+
+            <section>
+                <h3><span class="theme-colour">Step 2:</span> Add WebVR goodness</h3>
+            </section>
+
+            <section>
+                <h4>Get available VR devices</h4>
+                <pre><code class="javascript">if( navigator.getVRDevices ) {
+    navigator.getVRDevices().then( ... );
+}</code></pre>
+                <h5>(This is the only code I'll show - promise!)</h5>
+            </section>
+
+            <section>
+                <h4>Render scene twice, once for each eye</h4>
+                <img src="img/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
+                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
+                <h5>WebVR provides recommended eye FOV &amp; translation</h5>
+            </section>
+
+            <section>
+                <h4>Request full screen on the VR device</h4>
+                <img src="img/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
+                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
+                <h5>The browser will handle the distortion!</h5>
+            </section>
+
+            <section>
+                <h3><span class="theme-colour">Step 3:</span> Ensure you have included at least one dinosaur</h3>
+            </section>
+
+            <!--
+            <section>
+                <pre><code class="javascript">
+var ground = new THREE.Mesh(
+    new THREE.PlaneGeometry( ... ),
+    new THREE.MeshPhongMaterial( ... ));
+
+scene.add( ground );
+                </code></pre>
+            </section>
+
+            <section>
+                <pre><code class="javascript">loader.load('dinosaur.js',
+        function(geometry, materials) {
+
+    dino = new THREE.Mesh(
+        geometry,
+        new THREE.MeshFaceMaterial( materials ) );
+
+    scene.add( dino );
+});</code></pre>
+            </section>
+
+            <section>
+                <img src="img/webvr-stage1-threejs.png" alt="Three.js scene"/>
+            </section>
+
+            <section>
+                <h4>Warning: API likely to change</h4>
+                <pre><code class="javascript">if( navigator.getVRDevices ) {
+    navigator.getVRDevices().then( vrDeviceCallback );
+}
+
+function vrDeviceCallback( vrDevices ) {
+    for( var i=0; i < vrDevices.length; i++ ) {
+        // If instance of HMDVRDevice...
+        // If instance of PositionSensorVRDevice...
+    }
+}</code></pre>
+            </section>
+
+            <section>
+                <pre><code class="javascript">var leftFOV =
+    vrHMD.getRecommendedEyeFieldOfView('left');
+
+var leftTrans = vrHMD.getEyeTranslation('left');
+                </code></pre>
+            </section>
+
+            <section>
+                <pre><code class="javascript">if( canvas.webkitRequestFullscreen ) {
+    canvas.webkitRequestFullscreen({
+        vrDisplay: hmdDevice });
+
+} else if( container.mozRequestFullScreen ) {
+    container.mozRequestFullScreen({
+        vrDisplay: hmdDevice });
+}</code></pre>
+            </section>
+
+            <section>
+                <h3>Add a dinosaur and...</h3>
+            </section>
+            -->
+
+            <section>
+                <h4>Oculus Rift Web TRex!</h4>
+                <video controls>
+                    <source src="movies/trex-oculus-low.mp4" type="video/mp4;"/>
+                </video>
+                <p class="caption">Thanks to <a href="http://www.dk.com/">DK</a> and
+                    <a href="http://www.eyeonline.com/">eyeon Software</a> for lending me the content.</p>
+            </section>
+
+            <section>
+                <img class="tech-logo" id="webgl-logo2" src="img/webgl-logo-colouradjust.png"/>
+                <img class="tech-logo" id="css3-logo2" src="img/css3-logo.png"/>
+                <div class="fragment"><!-- This is used to kick off animation --></div>
+            </section>
+
+            <section>
+                <h4>Just set <span class="theme-colour">transform-style: preserve-3d</span></h4>
+                <img src="img/css3d-globe.jpg" alt="CSS3D Globe"/>
+                <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
+            </section>
+
+            <section>
+                <h4>And request full screen on VR device</h4>
+                <img src="img/css3d-globe-duo.jpg" alt="CSS3D Globe"/>
+                <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
+            </section>
+
+            <section>
+                <h3>Google Cardboard</h3>
+                <img src="img/GoogleCardboardWithPhone-low-vignette.jpg" alt="Google Cardboard"/>
+            </section>
+
+            <section>
+                <h3 class="theme-colour">Google Cardboard</h3>
+                <ul class="more-text">
+                    <li>No WebVR support yet</li>
+                    <li class="fragment">But we can use HTML5 Orientation API</li> <!-- And apply our own distortion if we want to... -->
+                    <li class="fragment">Three.js provides <em>DeviceOrientationControls</em></li>
+                    <li class="fragment">...and <em>StereoEffect</em></li>
+                    <li class="fragment">Just the distortion, then.</li>
+                </ul>
+            </section>
+
+            <!--
+            <section>
+                <pre><code class="javascript">var effect = new THREE.StereoEffect( renderer );
+
+...
+
+var controls = new THREE.DeviceOrientationControls(
+        camera, true);
+</code></pre>
+            </section>
+            -->
+
+            <section>
+                <h4>Cardboard TRex! (Minus Cardboard)</h4>
+                <video controls>
+                    <source src="movies/trex-cardboard-low.mp4" type="video/mp4;"/>
+                </video>
+                <p class="caption">Thanks again to <a href="http://www.dk.com/">DK</a> for lending the dinosaur.</p>
+            </section>
+
+            <section>
+                <h3>Code examples from Google</h3>
+                <h3><a class="theme-colour" href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
+                <h3><a class="theme-colour" href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
+            </section>
+
+            <section>
+                <h3 class="theme-colour bonus">Bonus!</h3>
+                <img src="img/unity-logo-trans-nopoweredby.png" alt="Unity"/>
+            </section>
+
+            <!-- Intro the fact we're an education company so interested in how VR could help people to learn, and ways it might be useful for educators... -->
+            <!--
+            <section>
+
+                <img width="80%" src="img/Pearson_Without_Strapline_Trans_LoRes.png" alt="Pearson"/>
+                <img width="70%" src="img/ft-h-white-trans.png" alt="Future Tech"/>
+            </section>
+            -->
+
+            <section>
+                <h4>Project Fishfinder</h4>
+                <!-- Project we worked on with Clinical Assessment team in Pearson (who develop psychometric tests and interventions for psychologists) -->
+                <!-- Idea came from research showing that Virtual Reality can be effective for treating things like phobias and post-traumatic stress disorder -->
+                <!-- An assessment and intervention tool for private practice psychologists working with early adolescents whom might be having problems with bullying -->
+                <!-- Allows an experience of bullying in a safe environment - psychologist can talk with them about how it made them feel, how they would react to it, etc. -->
+                <video controls>
+                    <source src="movies/fishfinder2.3.mp4" type="video/mp4;"/>
+                </video>
+            </section>
+
+            <section>
+                <h3>Come say hi to the T-rex!</h3>
+                <img src="img/trex-closeup.png" alt="TRex close-up"/>
+            </section>
+
+            <section>
+                <div>
+                    <h2>Thank you.</h2>
+                    <!--<p class="medium-link">Blog post: <a class="theme-colour" href="http://bit.ly/interfaces-of-the-future">bit.ly/interfaces-of-the-future</a></p>-->
+                    <p class="medium-link">web-vr mailing list: <a class="theme-colour" href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></p>
+                    <p class="medium-link">me: <a class="theme-colour" href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false, //true,
+            progress: false,
+            history: true,
+            center: true,
+
+            theme: 'futuretech', // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+            //backgroundTransition: 'concave',
+
+            width: 1024,
+            height: 768,
+
+            minScale: 1,
+            maxScale: 1,
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () {
+                    return !document.body.classList;
+                } },
+                { src: 'plugin/markdown/marked.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                } },
+                { src: 'plugin/markdown/markdown.js', condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () {
+                    return !!document.body.classList;
+                } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () {
+                    return !!document.body.classList;
+                } }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
