@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Intro to WebVR</title>
+    <title>Enter the Metaverse</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -29,13 +29,13 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
 
-            <section class="title">
+            <section class="title" data-background="img/backgrounds/lights-of-city-darker-more.jpg">
                 <h1>Enter the Metaverse</h1>
                 <h2>Introducing Virtual Reality<br/> for the Web</h2>
                 <p class="small">Peter O'Shaughnessy <span class="subtle">|</span> <a href="https://www.twitter.com/poshaughnessy">@poshaughnessy</a></p> <!--<span class="subtle">|</span> Press <strong>f</strong> for full screen, <strong>h</strong> for high contrast</p>-->
             </section>
 
-            <section class="contents">
+            <section class="contents" data-background="img/backgrounds/neo-flickr-sudhee-darker.jpg">
                 <ul class="push-down-2 no-bullet">
                     <li>1. VR &amp; the Metaverse</li>
                     <li>2. WebVR</li>
@@ -44,7 +44,7 @@
                 </ul>
             </section>
 
-            <section class="metaverse">
+            <section class="metaverse" data-background="img/backgrounds/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg">
                 <h3>The Metaverse</h3>
                 <ul>
                     <li class="fragment">Interconnected virtual worlds</li>
@@ -67,22 +67,9 @@
             </section>
 
             <section>
-                <!-- ...But just in the last few weeks... -->
-                <!--
-                <h3>Just in the last few weeks:</h3>
-                <div class="fragment">
-                    <ul class="more-text">
-                        <li><a href="http://blog.ludei.com/webgl-ios-8-safari-webview/">Apple embrace WebGL</a></li>
-                        <li><a href="https://developers.google.com/cardboard/">Google unveil Cardboard</a></li>
-                        <li><a href="http://blog.bitops.com/blog/2014/06/26/first-steps-for-vr-on-the-web/">Mozilla release VR Firefox builds</a></li>
-                        <li><a href="http://blog.tojicode.com/2014/07/bringing-vr-to-chrome.html">Google release VR Chrome builds</a></li>
-                    </ul>
-                </div>
-                -->
                 <h3>New Web API!</h3>
                 <img class="browser-logo" id="ff-logo" src="img/Mozilla_Firefox_3.5_logo_256.png" alt="Firefox"/>
                 <img class="browser-logo" id="chrome-logo" src="img/Google_Chrome_logo.png" alt="Chrome"/>
-                <!--<h5>Available in special builds only</h5>-->
             </section>
 
             <section>
@@ -96,7 +83,7 @@
             </section>
 
             <section>
-                <h2></h2>
+                <h2>Appropriate Warning</h2>
                 <ul class="more-text fragment">
                     <li>"Version Zero"</li>
                     <li>Not even in alpha channels yet</li>
@@ -108,8 +95,8 @@
             </section>
 
             <section>
-                <img class="tech-logo" id="webgl-logo" src="img/webgl-logo-colouradjust.png"/>
-                <img class="tech-logo" id="css3-logo" src="img/css3-logo.png"/>
+                <img class="tech-logo" id="webgl-logo" src="img/logos/webgl-logo-colouradjust.png"/>
+                <img class="tech-logo" id="css3-logo" src="img/logos/css3-logo.png"/>
                 <div class="fragment"><!-- This is used to kick off animation --></div>
             </section>
 
@@ -119,7 +106,7 @@
 
             <section>
                 <h3 class="threejs">I recommend <span>three.js</span></h3>
-                <img src="img/threejs-examples.png" alt="Three.js examples"/>
+                <img src="img/misc/threejs-examples.png" alt="Three.js examples"/>
                 <p class="caption"><a href="http://threejs.org">threejs.org</a></p>
             </section>
 
@@ -136,14 +123,14 @@
 
             <section>
                 <h4>Render scene twice, once for each eye</h4>
-                <img src="img/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
+                <img src="img/screenshots/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
                 <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
                 <h5>WebVR provides recommended eye FOV &amp; translation</h5>
             </section>
 
             <section>
                 <h4>Request full screen on the VR device</h4>
-                <img src="img/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
+                <img src="img/screenshots/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
                 <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
                 <h5>The browser will handle the distortion!</h5>
             </section>
@@ -227,26 +214,26 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             </section>
 
             <section>
-                <img class="tech-logo" id="webgl-logo2" src="img/webgl-logo-colouradjust.png"/>
-                <img class="tech-logo" id="css3-logo2" src="img/css3-logo.png"/>
+                <img class="tech-logo" id="webgl-logo2" src="img/logos/webgl-logo-colouradjust.png"/>
+                <img class="tech-logo" id="css3-logo2" src="img/logos/css3-logo.png"/>
                 <div class="fragment"><!-- This is used to kick off animation --></div>
             </section>
 
             <section>
                 <h4>Just set <span>transform-style: preserve-3d</span></h4>
-                <img src="img/css3d-globe.jpg" alt="CSS3D Globe"/>
+                <img src="img/screenshots/css3d-globe.jpg" alt="CSS3D Globe"/>
                 <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
             </section>
 
             <section>
                 <h4>And request full screen on VR device</h4>
-                <img src="img/css3d-globe-duo.jpg" alt="CSS3D Globe"/>
+                <img src="img/screenshots/css3d-globe-duo.jpg" alt="CSS3D Globe"/>
                 <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
             </section>
 
             <section>
                 <h3>Google Cardboard</h3>
-                <img src="img/GoogleCardboardWithPhone-low-vignette.jpg" alt="Google Cardboard"/>
+                <img src="img/photos/GoogleCardboardWithPhone-low-vignette.jpg" alt="Google Cardboard"/>
             </section>
 
             <section>
@@ -288,7 +275,7 @@ var controls = new THREE.DeviceOrientationControls(
 
             <section>
                 <h3 class="theme-colour bonus">Bonus!</h3>
-                <img src="img/unity-logo-trans-nopoweredby.png" alt="Unity"/>
+                <img src="img/logos/unity-logo-trans-nopoweredby.png" alt="Unity"/>
             </section>
 
             <!-- Intro the fact we're an education company so interested in how VR could help people to learn, and ways it might be useful for educators... -->
@@ -313,7 +300,7 @@ var controls = new THREE.DeviceOrientationControls(
 
             <section>
                 <h3>Come say hi to the T-rex!</h3>
-                <img src="img/trex-closeup.png" alt="TRex close-up"/>
+                <img src="img/screenshots/trex-closeup.png" alt="TRex close-up"/>
             </section>
 
             <section>
@@ -345,6 +332,7 @@ var controls = new THREE.DeviceOrientationControls(
 
             theme: 'futuretech', // available themes are in /css/theme
             transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+            transitionSpeed: 'fast',
 
             //backgroundTransition: 'concave',
 

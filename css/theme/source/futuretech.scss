@@ -252,12 +252,17 @@ body.high-contrast {
   margin-top: 2em;
 }
 
+.reveal section {
+  background-size: 100% 100%;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
 // Slide-specific styles  ----------------------
 
 section.title {
 
-  background: url(../../../img/lights-of-city-darker-more.jpg) top left no-repeat; /*url(../../../img/snowcrash_tantek.jpg) top left no-repeat;*/
-  background-size: 100% 100%;
+  /*background-image: url(../../../img/backgrounds/lights-of-city-darker-more.jpg);*/
 
   h1 {
     margin-top: 1.5em;
@@ -318,9 +323,12 @@ section.title {
   }
 }
 
+section.contents {
+  /*background-image: url(../../../img/backgrounds/neo-flickr-sudhee-darker.jpg);*/
+}
+
 section.metaverse {
-  background: url(../../../img/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg) top left no-repeat;
-  background-size: 100% 100%;
+  /*background-image: url(../../../img/backgrounds/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg);*/
 }
 
 .reveal section img.browser-logo {

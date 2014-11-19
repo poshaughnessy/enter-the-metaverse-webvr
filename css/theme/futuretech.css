@@ -287,10 +287,13 @@ body.high-contrast {
 .reveal .push-down-2 {
   margin-top: 2em; }
 
+.reveal section {
+  background-size: 100% 100%;
+  background-position: top left;
+  background-repeat: no-repeat; }
+
 section.title {
-  background: url(../../../img/lights-of-city-darker-more.jpg) top left no-repeat;
-  /*url(../../../img/snowcrash_tantek.jpg) top left no-repeat;*/
-  background-size: 100% 100%; }
+  /*background-image: url(../../../img/backgrounds/lights-of-city-darker-more.jpg);*/ }
   section.title h1 {
     margin-top: 1.5em;
     font-size: 2.2em;
@@ -313,9 +316,11 @@ section.title {
   section.title p {
     text-shadow: 1px 1px 10px #346484, -1px -1px 10px #346484, 1px -1px 10px #346484, -1px 1px 10px #346484, 0 -1px 10px #346484, 0 1px 10px #346484; }
 
+section.contents {
+  /*background-image: url(../../../img/backgrounds/neo-flickr-sudhee-darker.jpg);*/ }
+
 section.metaverse {
-  background: url(../../../img/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg) top left no-repeat;
-  background-size: 100% 100%; }
+  /*background-image: url(../../../img/backgrounds/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg);*/ }
 
 .reveal section img.browser-logo {
   width: 320px;
