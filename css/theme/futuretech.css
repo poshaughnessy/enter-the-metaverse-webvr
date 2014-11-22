@@ -162,17 +162,27 @@ body.high-contrast {
 .reveal h3,
 .reveal h4,
 .reveal h5,
-.reveal h6 {
+.reveal h6,
+.reveal p,
+.reveal ul,
+.reveal ol {
   color: #fff;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9); }
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 20px rgba(0, 0, 0, 0.9); }
 
 .reveal .blue-tint h1,
 .reveal .blue-tint h2,
 .reveal .blue-tint h3,
 .reveal .blue-tint h4,
 .reveal .blue-tint h5,
-.reveal .blue-tint h6 {
-  text-shadow: 2px 2px 10px #346484, -2px -2px 10px #346484, 2px -2px 10px #346484, -2px 2px 10px #346484, 0 -2px 10px #346484, 0 2px 10px #346484; }
+.reveal .blue-tint h6,
+.reveal .blue-tint p,
+.reveal .blue-tint ul,
+.reveal .blue-tint ol {
+  text-shadow: 2px 2px 10px #346484, -2px -2px 10px #346484, 2px -2px 10px #346484, -2px 2px 10px #346484, 0 -2px 10px #346484, 0 2px 10px #346484;
+  /*text-stroke: 1px $textShadowColorTint;*/ }
+
+.reveal .standout {
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 20px #346484; }
 
 .reveal .theme-colour {
   color: #000; }
@@ -234,8 +244,8 @@ body.high-contrast {
   color: #ccc; }
 
 .reveal .slides section {
-  width: 964px;
-  height: 708px;
+  width: 1220px;
+  height: 660px;
   padding: 30px; }
 
 .reveal section img {
@@ -318,6 +328,10 @@ body.high-contrast {
 h3.v-bottom {
   width: 100%;
   text-align: center; }
+
+.reveal iframe,
+.reveal blockquote {
+  margin-top: 1em; }
 
 section.title {
   /*background-image: url(../../../img/backgrounds/lights-of-city-darker-more.jpg);*/ }
