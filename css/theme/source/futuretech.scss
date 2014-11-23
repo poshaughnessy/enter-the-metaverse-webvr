@@ -93,6 +93,7 @@ body.high-contrast {
   color: #fff;
   text-shadow:
     0px 0px 5px $textShadowColorDefault,
+    0px 0px 10px $textShadowColorDefault,
     0px 0px 20px $textShadowColorDefault;
 }
 
@@ -115,7 +116,7 @@ body.high-contrast {
   /*text-stroke: 1px $textShadowColorTint;*/
 }
 
-.reveal .standout {
+.reveal .blue-tint-light {
   text-shadow:
     0px 0px 5px $textShadowColorDefault,
     0px 0px 20px $textShadowColorTint;

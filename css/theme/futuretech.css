@@ -167,7 +167,7 @@ body.high-contrast {
 .reveal ul,
 .reveal ol {
   color: #fff;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 20px rgba(0, 0, 0, 0.9); }
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.9), 0px 0px 20px rgba(0, 0, 0, 0.9); }
 
 .reveal .blue-tint h1,
 .reveal .blue-tint h2,
@@ -181,7 +181,7 @@ body.high-contrast {
   text-shadow: 2px 2px 10px #346484, -2px -2px 10px #346484, 2px -2px 10px #346484, -2px 2px 10px #346484, 0 -2px 10px #346484, 0 2px 10px #346484;
   /*text-stroke: 1px $textShadowColorTint;*/ }
 
-.reveal .standout {
+.reveal .blue-tint-light {
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 20px #346484; }
 
 .reveal .theme-colour {
