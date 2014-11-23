@@ -144,6 +144,17 @@
                 <!-- Education - training - simulations -->
             </section>
 
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h4>Project Fishfinder</h4>
+                <!-- Project we worked on with Clinical Assessment team in Pearson (who develop psychometric tests and interventions for psychologists) -->
+                <!-- Idea came from research showing that Virtual Reality can be effective for treating things like phobias and post-traumatic stress disorder -->
+                <!-- An assessment and intervention tool for private practice psychologists working with early adolescents whom might be having problems with bullying -->
+                <!-- Allows an experience of bullying in a safe environment - psychologist can talk with them about how it made them feel, how they would react to it, etc. -->
+                <video controls>
+                    <source src="movies/fishfinder2.3.mp4" type="video/mp4;"/>
+                </video>
+            </section>
+
             <section class="blue-tint" data-background="img/screenshots/1920s_Berlin_Project_in_Second_Life-edit-dark.jpg">
                 <h3 class="push-down-2">&ldquo;Metaverse&rdquo;</h3>
                 <ul>
@@ -182,50 +193,26 @@
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <h3 class="push-down-1">&ldquo;WebVR&rdquo;</h3>
-                <ul class="more-text">
+                <ul class="fragment more-text">
                     <li>Device discovery</li>
                     <li>Full screen extensions</li>
                     <li>Sensor integration, e.g. orientation</li>
-                    <li>Rendering for different hardware</li>
+                    <li>Rendering for different hardware</li> <!-- So you can be device agnostic (although just Oculus Rift so far...) -->
                 </ul>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="push-down-1">Appropriate Warning</h3>
-                <ul class="more-text fragment">
+                <h3 class="push-down-1">Warning!</h3>
+                <ul class="more-text">
                     <li>"Version Zero"</li>
                     <li>Not even in alpha channels yet</li>
                 </ul>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="v-center">5 min guide to WebVR</h3>
-            </section>
-
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <div class="v-center">
                     <img class="tech-logo" id="webgl-logo" src="img/logos/webgl-logo-colouradjust.png"/>
                 </div>
-            </section>
-
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="v-center"><span>Step 1:</span> Develop WebGL app as usual</h3>
-            </section>
-
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="threejs.org" data-captionlink="http://threejs.org">
-                <h3 class="threejs">three.js is great</h3>
-                <img src="img/misc/threejs-examples.png" alt="Three.js examples"/>
-            </section>
-
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="v-center"><span>Step 2:</span> Add WebVR goodness</h3>
-            </section>
-
-            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h4 class="push-down-1">Get available VR devices</h4>
-                <pre class="push-down-2"><code class="javascript">if( navigator.getVRDevices ) {
-    navigator.getVRDevices().then( ... );
-}</code></pre>
             </section>
 
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="oculus vr" data-captionlink="http://www.oculusvr.com">
@@ -237,168 +224,151 @@
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="oculus vr" data-captionlink="http://www.oculusvr.com">
                 <h4 class="push-down-1">Request full screen on the VR device</h4>
                 <img class="small" src="img/screenshots/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
-                <h5 class="blue-tint-light">The browser will handle the distortion!</h5>
+                <h5 class="blue-tint-light">The browser will handle the distortion</h5>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="v-center"><span>Step 3:</span> Ensure you have included at least one dinosaur</h3>
+                <h3 class="push-down-3">Raw WebVR code time</h3>
+                <h4 class="push-down-2">Warning: APIs likely to change</h4>
             </section>
 
-            <!--
-            <section>
-                <pre><code class="javascript">
-var ground = new THREE.Mesh(
-    new THREE.PlaneGeometry( ... ),
-    new THREE.MeshPhongMaterial( ... ));
-
-scene.add( ground );
-                </code></pre>
-            </section>
-
-            <section>
-                <pre><code class="javascript">loader.load('dinosaur.js',
-        function(geometry, materials) {
-
-    dino = new THREE.Mesh(
-        geometry,
-        new THREE.MeshFaceMaterial( materials ) );
-
-    scene.add( dino );
-});</code></pre>
-            </section>
-
-            <section>
-                <img src="img/webvr-stage1-threejs.png" alt="Three.js scene"/>
-            </section>
-
-            <section>
-                <h4>Warning: API likely to change</h4>
-                <pre><code class="javascript">if( navigator.getVRDevices ) {
-    navigator.getVRDevices().then( vrDeviceCallback );
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <!-- TODO check this is up to date! -->
+                <!-- TODO show assigning vrHMD? -->
+                <pre class="v-center"><code class="javascript">
+if( navigator.getVRDevices ) {
+    navigator.getVRDevices().then( handleVRDevices );
 }
 
-function vrDeviceCallback( vrDevices ) {
+function handleVRDevices( vrDevices ) {
     for( var i=0; i < vrDevices.length; i++ ) {
         // If instance of HMDVRDevice...
         // If instance of PositionSensorVRDevice...
     }
-}</code></pre>
+}
+                </code></pre>
             </section>
 
-            <section>
-                <pre><code class="javascript">var leftFOV =
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <pre class="v-center"><code class="javascript">
+var leftFOV =
     vrHMD.getRecommendedEyeFieldOfView('left');
 
 var leftTrans = vrHMD.getEyeTranslation('left');
                 </code></pre>
             </section>
 
-            <section>
-                <pre><code class="javascript">if( canvas.webkitRequestFullscreen ) {
-    canvas.webkitRequestFullscreen({
-        vrDisplay: hmdDevice });
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <!-- Why do I have vrHMD above, but hmdDevice here? -->
+                <pre class="v-center"><code class="javascript">
+if( canvas.webkitRequestFullscreen ) {
+    canvas.webkitRequestFullscreen({vrDisplay: hmdDevice});
 
 } else if( container.mozRequestFullScreen ) {
     container.mozRequestFullScreen({
-        vrDisplay: hmdDevice });
+    vrDisplay: hmdDevice });
 }</code></pre>
             </section>
 
-            <section>
-                <h3>Add a dinosaur and...</h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center">Rest of WebGL app as normal</h3>
             </section>
-            -->
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="threejs.org" data-captionlink="http://threejs.org">
+                <h3>three.js</h3>
+                <img src="img/misc/threejs-examples.png" alt="Three.js examples"/>
+            </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h4>Oculus Rift Web TRex!</h4>
+                <h4>Oculus Rift TRex!</h4>
                 <video controls>
                     <source src="movies/trex-oculus-low.mp4" type="video/mp4;"/>
                 </video>
-                <p class="caption">Thanks to <a href="http://www.dk.com/">DK</a> and
-                    <a href="http://www.eyeonline.com/">eyeon Software</a> for lending me the content.</p>
+                <small class="blue-tint-light">Thanks to <a href="http://www.dk.com/">DK</a> and
+                    <a href="http://www.eyeonline.com/">eyeon Software</a> for lending me the content.</small>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <img class="tech-logo" id="css3-logo2" src="img/logos/css3-logo.png"/>
+                <h3 class="threejs">three.js now makes it even easier</h3>
+                <!-- TODO three.js VRController & VREffect -->
             </section>
 
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h4>Just set <span>transform-style: preserve-3d</span></h4>
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <div class="v-center">
+                    <img class="tech-logo" id="css3-logo2" src="img/logos/css3-logo.png"/>
+                    <p><em>Being worked on - not in latest browser build!</em></p>
+                </div>
+            </section>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="edankwan.com" data-captionlink="http://www.edankwan.com/lab/css3dEarth">
+                <h4>Set <span>transform-style: preserve-3d</span></h4>
                 <img src="img/screenshots/css3d-globe.jpg" alt="CSS3D Globe"/>
-                <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
             </section>
 
-            <section>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="edankwan.com" data-captionlink="http://www.edankwan.com/lab/css3dEarth">
                 <h4>And request full screen on VR device</h4>
                 <img src="img/screenshots/css3d-globe-duo.jpg" alt="CSS3D Globe"/>
-                <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
             </section>
 
-            <section>
-                <h3>Google Cardboard</h3>
-                <img src="img/photos/GoogleCardboardWithPhone-low-vignette.jpg" alt="Google Cardboard"/>
+            <section class="blue-tint-light" data-background="img/photos/cardboard-edit.jpg" data-caption="google">
+                <h3 class="v-bottom">Google Cardboard</h3>
             </section>
 
-            <section>
-                <h3>Google Cardboard</h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="push-down-1">Cardboard web dev</h3>
                 <ul class="more-text">
                     <li>No WebVR support yet</li>
-                    <li class="fragment">But we can use HTML5 Orientation API</li> <!-- And apply our own distortion if we want to... -->
-                    <li class="fragment">Three.js provides <em>DeviceOrientationControls</em></li>
-                    <li class="fragment">...and <em>StereoEffect</em></li>
-                    <li class="fragment">Just the distortion, then.</li>
+                    <li class="fragment">But it's essentially a regular mobile web app
+                        <ul class="fragment no-bullet">
+                            <li>Plus HTML5 Orientation API</li>
+                            <li>Plus stereoscopic effect</li>
+                            <li>(Plus distortion)</li> <!-- We can apply our own distortion if we want to... -->
+                        </ul>
+                    </li>
                 </ul>
             </section>
 
-            <!--
-            <section>
-                <pre><code class="javascript">var effect = new THREE.StereoEffect( renderer );
-
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <pre class="v-center"><code class="javascript">
+var effect = new THREE.StereoEffect( renderer );
 ...
+effect.render( scene, camera );
 
-var controls = new THREE.DeviceOrientationControls(
-        camera, true);
-</code></pre>
+                </code></pre>
             </section>
-            -->
 
-            <section>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <pre class="v-center"><code class="javascript">
+var controls = new THREE.DeviceOrientationControls(
+    camera, true);
+
+controls.connect();
+...
+controls.update();
+
+                </code></pre>
+            </section>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="Thanks again to DK for lending the dinosaur" data-captionclasses="darker">
                 <h4>Cardboard TRex! (Minus Cardboard)</h4>
                 <video controls>
                     <source src="movies/trex-cardboard-low.mp4" type="video/mp4;"/>
                 </video>
-                <p class="caption">Thanks again to <a href="http://www.dk.com/">DK</a> for lending the dinosaur.</p>
             </section>
 
-            <section>
-                <h3>Code examples from Google</h3>
-                <h3><a href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <!-- TODO check these are up to date! -->
+                <h3 class="push-down-2">Code examples from Google</h3>
+                <h3 class="push-down-1"><a href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
                 <h3><a href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
             </section>
 
-            <section>
-                <h3 class="theme-colour bonus">Bonus!</h3>
-                <img src="img/logos/unity-logo-trans-nopoweredby.png" alt="Unity"/>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center">Interaction</h3>
             </section>
 
-            <!-- Intro the fact we're an education company so interested in how VR could help people to learn, and ways it might be useful for educators... -->
-            <!--
-            <section>
-
-                <img width="80%" src="img/Pearson_Without_Strapline_Trans_LoRes.png" alt="Pearson"/>
-                <img width="70%" src="img/ft-h-white-trans.png" alt="Future Tech"/>
-            </section>
-            -->
-
-            <section>
-                <h4>Project Fishfinder</h4>
-                <!-- Project we worked on with Clinical Assessment team in Pearson (who develop psychometric tests and interventions for psychologists) -->
-                <!-- Idea came from research showing that Virtual Reality can be effective for treating things like phobias and post-traumatic stress disorder -->
-                <!-- An assessment and intervention tool for private practice psychologists working with early adolescents whom might be having problems with bullying -->
-                <!-- Allows an experience of bullying in a safe environment - psychologist can talk with them about how it made them feel, how they would react to it, etc. -->
-                <video controls>
-                    <source src="movies/fishfinder2.3.mp4" type="video/mp4;"/>
-                </video>
+            <section data-background="img/misc/leap-vr-mount.jpg" data-caption="leap motion" data-captionclasses="darker">
+                <!-- Leap VR Mount -->
             </section>
 
             <section data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
@@ -413,13 +383,15 @@ var controls = new THREE.DeviceOrientationControls(
             </section>
             -->
 
-            <section>
-                <div>
-                    <h2>Thank you.</h2>
-                    <!--<p class="medium-link">Blog post: <a href="http://bit.ly/interfaces-of-the-future">bit.ly/interfaces-of-the-future</a></p>-->
-                    <p class="medium-link">web-vr mailing list: <a href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></p>
-                    <p class="medium-link">me: <a href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></p>
-                </div>
+            <section class="blue-tint" data-background="img/backgrounds/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg" data-caption="mind-criminal" data-captionlink="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">
+                <h3>Now we can create whole new worlds!</h3>
+                <h3 class="fragment v-bottom">What will you create?</h3>
+            </section>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-more.jpg">
+                <h2 class="push-down-1">Thank you.</h2>
+                <h4 class="push-down-2">web-vr mailing list: <a href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></h4>
+                <h4>me: <a href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></h4>
             </section>
 
         </div>

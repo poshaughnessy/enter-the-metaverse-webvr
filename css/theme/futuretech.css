@@ -231,6 +231,17 @@ body.high-contrast {
 .reveal .blue-tint ul:not(.no-bullet) li:before {
   text-shadow: 2px 2px 2px #346484; }
 
+.reveal ul li ul {
+  padding-left: 50px; }
+
+.reveal ul li ul li {
+  font-size: 0.9em; }
+
+.reveal ul li ul.no-bullet > li:before {
+  content: '';
+  padding: 0;
+  text-shadow: none; }
+
 .reveal blockquote {
   box-shadow: none;
   font-size: 1.3em;
