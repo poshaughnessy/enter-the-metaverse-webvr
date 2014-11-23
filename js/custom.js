@@ -88,6 +88,22 @@
 
         }
 
+        // Captions
+        var slide = document.getElementsByTagName('section')[slideNumber],
+            caption = slide.dataset.caption,
+            captionClasses = slide.dataset.captionclasses;
+
+        if( !caption ) {
+            caption = '';
+        }
+
+        if( !captionClasses ) {
+            captionClasses = '';
+        }
+
+        document.getElementById('caption').innerHTML = caption;
+        document.getElementById('caption').className = captionClasses;
+
     }
 
     function onKeyDown(e) {

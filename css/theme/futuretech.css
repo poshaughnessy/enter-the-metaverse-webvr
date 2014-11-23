@@ -165,7 +165,8 @@ body.high-contrast {
 .reveal h6,
 .reveal p,
 .reveal ul,
-.reveal ol {
+.reveal ol,
+.reveal blockquote {
   color: #fff;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 10px rgba(0, 0, 0, 0.9), 0px 0px 20px rgba(0, 0, 0, 0.9); }
 
@@ -182,7 +183,7 @@ body.high-contrast {
   /*text-stroke: 1px $textShadowColorTint;*/ }
 
 .reveal .blue-tint-light {
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 20px #346484; }
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9), 0px 0px 10px #346484, 0px 0px 20px #346484; }
 
 .reveal .theme-colour {
   color: #000; }
@@ -292,12 +293,28 @@ body.high-contrast {
   .reveal pre code {
     padding: 10px; }
 
-.reveal .caption {
-  margin-top: -1em;
-  font-size: 0.4em; }
+#caption {
+  font-size: 0.35em;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  color: #ccc;
+  z-index: 10;
+  text-shadow: none;
+  letter-spacing: 0; }
 
-.reveal .caption a {
+#caption a {
   color: #ccc; }
+
+#caption.left {
+  right: auto;
+  left: 15px; }
+
+#caption.darker {
+  color: #aaa; }
+
+#caption.lighter {
+  color: #eee; }
 
 .reveal .medium-link {
   font-size: 0.8em; }
@@ -310,6 +327,12 @@ body.high-contrast {
 
 .reveal .push-down-2 {
   margin-top: 2em; }
+
+.reveal .push-down-3 {
+  margin-top: 3em; }
+
+.reveal .push-down-4 {
+  margin-top: 4em; }
 
 .reveal section {
   background-size: 100% 100%;

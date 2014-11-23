@@ -89,7 +89,8 @@ body.high-contrast {
 .reveal h6,
 .reveal p,
 .reveal ul,
-.reveal ol {
+.reveal ol,
+.reveal blockquote {
   color: #fff;
   text-shadow:
     0px 0px 5px $textShadowColorDefault,
@@ -119,6 +120,7 @@ body.high-contrast {
 .reveal .blue-tint-light {
   text-shadow:
     0px 0px 5px $textShadowColorDefault,
+    0px 0px 10px $textShadowColorTint,
     0px 0px 20px $textShadowColorTint;
 }
 
@@ -261,13 +263,32 @@ body.high-contrast {
 
 }
 
-.reveal .caption {
-  margin-top: -1em;
-  font-size: 0.4em;
+#caption {
+  font-size: 0.35em;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  color: #ccc;
+  z-index: 10;
+  text-shadow: none;
+  letter-spacing: 0;
 }
 
-.reveal .caption a {
+#caption a {
   color: $linkColor;
+}
+
+#caption.left {
+  right: auto;
+  left: 15px;
+}
+
+#caption.darker {
+  color: #aaa;
+}
+
+#caption.lighter {
+  color: #eee;
 }
 
 .reveal .medium-link {
@@ -284,6 +305,14 @@ body.high-contrast {
 
 .reveal .push-down-2 {
   margin-top: 2em;
+}
+
+.reveal .push-down-3 {
+  margin-top: 3em;
+}
+
+.reveal .push-down-4 {
+  margin-top: 4em;
 }
 
 .reveal section {
