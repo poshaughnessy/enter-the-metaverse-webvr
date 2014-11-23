@@ -95,7 +95,7 @@
                 <h3 class="v-bottom blue-tint-light">Samsung Gear VR - next month</h3>
             </section>
 
-            <section data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <blockquote class="push-down-2">Virtual reality was once the dream of science fiction. But the internet was also once a dream, and so were computers and smartphones.</blockquote>
                 <p> - Mark Zuckerberg</p>
             </section>
@@ -144,13 +144,23 @@
                 <!-- Education - training - simulations -->
             </section>
 
-            <section class="metaverse blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+            <section class="blue-tint" data-background="img/screenshots/1920s_Berlin_Project_in_Second_Life-edit-dark.jpg">
                 <h3 class="push-down-2">&ldquo;Metaverse&rdquo;</h3>
                 <ul>
                     <li class="fragment">Shared virtual spaces</li>
                     <li class="fragment">Interconnected virtual worlds</li>
                 </ul>
             </section>
+
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <blockquote>
+                    When you think about Neuromancer &amp; Snow Crash <br>[and their] interconnected seamless worlds...
+                    it's pretty much the web that they're describing. It's the open web.
+                </blockquote>
+                <p> - Josh Carpenter</p>
+            </section>
+
+            <!-- TODO: Janus VR, Second Life? -->
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <h3 class="push-down-1">VR + The Web</h3>
@@ -164,14 +174,14 @@
                 <!-- It's the stuff of science fiction... -->
             </section>
 
-            <section class="metaverse" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3>New Web API!</h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="push-down-1">New Web API!</h3>
                 <img class="browser-logo" id="ff-logo" src="img/logos/Mozilla_Firefox_3.5_logo_256.png" alt="Firefox"/>
                 <img class="browser-logo" id="chrome-logo" src="img/logos/Google_Chrome_logo.png" alt="Chrome"/>
             </section>
 
-            <section>
-                <h3>&ldquo;WebVR&rdquo;</h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="push-down-1">&ldquo;WebVR&rdquo;</h3>
                 <ul class="more-text">
                     <li>Device discovery</li>
                     <li>Full screen extensions</li>
@@ -180,61 +190,58 @@
                 </ul>
             </section>
 
-            <section>
-                <h2>Appropriate Warning</h2>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="push-down-1">Appropriate Warning</h3>
                 <ul class="more-text fragment">
                     <li>"Version Zero"</li>
                     <li>Not even in alpha channels yet</li>
                 </ul>
             </section>
 
-            <section>
-                <h2>5 min guide to WebVR development</h2>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center">5 min guide to WebVR</h3>
             </section>
 
-            <section>
-                <img class="tech-logo" id="webgl-logo" src="img/logos/webgl-logo-colouradjust.png"/>
-                <img class="tech-logo" id="css3-logo" src="img/logos/css3-logo.png"/>
-                <div class="fragment"><!-- This is used to kick off animation --></div>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <div class="v-center">
+                    <img class="tech-logo" id="webgl-logo" src="img/logos/webgl-logo-colouradjust.png"/>
+                </div>
             </section>
 
-            <section>
-                <h3><span>Step 1:</span> Develop WebGL app as usual</h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center"><span>Step 1:</span> Develop WebGL app as usual</h3>
             </section>
 
-            <section>
-                <h3 class="threejs">I recommend <span>three.js</span></h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="threejs.org" data-captionlink="http://threejs.org">
+                <h3 class="threejs">three.js is great</h3>
                 <img src="img/misc/threejs-examples.png" alt="Three.js examples"/>
-                <p class="caption"><a href="http://threejs.org">threejs.org</a></p>
             </section>
 
-            <section>
-                <h3><span>Step 2:</span> Add WebVR goodness</h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center"><span>Step 2:</span> Add WebVR goodness</h3>
             </section>
 
-            <section>
-                <h4>Get available VR devices</h4>
-                <pre><code class="javascript">if( navigator.getVRDevices ) {
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h4 class="push-down-1">Get available VR devices</h4>
+                <pre class="push-down-2"><code class="javascript">if( navigator.getVRDevices ) {
     navigator.getVRDevices().then( ... );
 }</code></pre>
             </section>
 
-            <section>
-                <h4>Render scene twice, once for each eye</h4>
-                <img src="img/screenshots/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
-                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
-                <h5>WebVR provides recommended eye FOV &amp; translation</h5>
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="oculus vr" data-captionlink="http://www.oculusvr.com">
+                <h4 class="push-down-1">Render scene twice, once for each eye</h4>
+                <img class="small" src="img/screenshots/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
+                <h5 class="blue-tint-light">WebVR provides recommended eye FOV &amp; translation</h5>
             </section>
 
-            <section>
-                <h4>Request full screen on the VR device</h4>
-                <img src="img/screenshots/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
-                <p class="caption"><a href="http://www.oculusvr.com/">Oculus Rift</a></p>
-                <h5>The browser will handle the distortion!</h5>
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="oculus vr" data-captionlink="http://www.oculusvr.com">
+                <h4 class="push-down-1">Request full screen on the VR device</h4>
+                <img class="small" src="img/screenshots/oculus-stereo-distortion.jpg" alt="Stereo with distortion for Oculus"/>
+                <h5 class="blue-tint-light">The browser will handle the distortion!</h5>
             </section>
 
-            <section>
-                <h3><span>Step 3:</span> Ensure you have included at least one dinosaur</h3>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center"><span>Step 3:</span> Ensure you have included at least one dinosaur</h3>
             </section>
 
             <!--
@@ -302,7 +309,7 @@ var leftTrans = vrHMD.getEyeTranslation('left');
             </section>
             -->
 
-            <section>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <h4>Oculus Rift Web TRex!</h4>
                 <video controls>
                     <source src="movies/trex-oculus-low.mp4" type="video/mp4;"/>
@@ -311,13 +318,11 @@ var leftTrans = vrHMD.getEyeTranslation('left');
                     <a href="http://www.eyeonline.com/">eyeon Software</a> for lending me the content.</p>
             </section>
 
-            <section>
-                <img class="tech-logo" id="webgl-logo2" src="img/logos/webgl-logo-colouradjust.png"/>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <img class="tech-logo" id="css3-logo2" src="img/logos/css3-logo.png"/>
-                <div class="fragment"><!-- This is used to kick off animation --></div>
             </section>
 
-            <section>
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <h4>Just set <span>transform-style: preserve-3d</span></h4>
                 <img src="img/screenshots/css3d-globe.jpg" alt="CSS3D Globe"/>
                 <p class="caption"><a href="http://www.edankwan.com/lab/css3dEarth">edankwan.com</a></p>
