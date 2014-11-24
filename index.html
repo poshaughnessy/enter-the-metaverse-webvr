@@ -148,7 +148,7 @@
                 <!-- Idea came from research showing that Virtual Reality can be effective for treating things like phobias and post-traumatic stress disorder -->
                 <!-- An assessment and intervention tool for private practice psychologists working with early adolescents whom might be having problems with bullying -->
                 <!-- Allows an experience of bullying in a safe environment - psychologist can talk with them about how it made them feel, how they would react to it, etc. -->
-                <video controls>
+                <video controls poster="img/screenshots/fishfinder3.jpg">
                     <source src="movies/fishfinder2.3.mp4" type="video/mp4;"/>
                 </video>
             </section>
@@ -451,6 +451,35 @@ controls.update();
 
             <section data-background="img/misc/leap-vr-mount.jpg" data-caption="leap motion" data-captionclasses="darker">
                 <!-- Leap VR Mount -->
+            </section>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="push-down-1">LeapJS</h3>
+                <pre class="push-down-1"><code class="javascript">
+Leap.loop(function(frame){
+    console.log( frame.hands );
+});
+                    
+                </code></pre>
+                <h4 class="blue-tint-light push-down-1"><a href="https://github.com/leapmotion/leapjs">github.com/leapmotion/leapjs</a></h4>
+            </section>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="push-down-1">Leap Plugins</h3>
+                <pre class="push-down-1"><code class="javascript">
+Leap.loopController.use('boneHand', {
+    scene: scene,
+    arm: true     // Display the arm
+});
+                </code></pre>
+                <h4 class="blue-tint-light push-down-1"><a href="https://github.com/leapmotion/leapjs-plugins">github.com/leapmotion/leapjs-plugins</a></h4>
+            </section>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h4 class="push-down-1">Leap Plugins</h4>
+                <pre class="push-down-1"><code class="javascript">
+
+                </code></pre>
             </section>
 
             <section data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
