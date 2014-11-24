@@ -368,6 +368,14 @@ body.high-contrast {
   margin-top: 5em;
 }
 
+.reveal .line-height-1_5 {
+  line-height: 1.5em;
+}
+
+.reveal .line-height-2 {
+  line-height: 2em;
+}
+
 .reveal section {
   background-size: 100% 100%;
   background-position: top left;
@@ -473,6 +481,7 @@ section.metaverse {
   width: 320px;
   transition: transform linear 1.5s;
   display: inline-block;
+  margin-top: 1em;
 
   &:nth-child(1) {
     margin-right: 10px;

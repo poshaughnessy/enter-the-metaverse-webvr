@@ -375,6 +375,12 @@ body.high-contrast {
 .reveal .push-down-5 {
   margin-top: 5em; }
 
+.reveal .line-height-1_5 {
+  line-height: 1.5em; }
+
+.reveal .line-height-2 {
+  line-height: 2em; }
+
 .reveal section {
   background-size: 100% 100%;
   background-position: top left;
@@ -431,7 +437,8 @@ section.metaverse {
 .reveal section img.browser-logo {
   width: 320px;
   transition: transform linear 1.5s;
-  display: inline-block; }
+  display: inline-block;
+  margin-top: 1em; }
   .reveal section img.browser-logo:nth-child(1) {
     margin-right: 10px; }
 
