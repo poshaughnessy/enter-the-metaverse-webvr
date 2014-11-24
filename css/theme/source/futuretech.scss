@@ -122,6 +122,12 @@ body.high-contrast {
 }
 
 
+.reveal .grey-tint-light {
+  text-shadow:
+    0px 0px 5px $textShadowColorDefault,
+    0px 0px 10px $textShadowColorDefault;
+}
+
 .reveal .theme-colour {
   color: $themeColor;
 }
