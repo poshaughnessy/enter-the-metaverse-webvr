@@ -193,15 +193,28 @@ body.high-contrast {
   font-family: 'arial', 'helvetica', sans-serif;
   line-height: 1em; }
 
-.reveal h5 {
-  font-size: 0.75em; }
-
 .reveal h2 {
   font-size: 2em;
   line-height: 1.2em; }
 
-.reveal p.small {
+.reveal .sub-h3 {
+  line-height: 1.3em;
+  font-size: 1.3em; }
+
+.reveal h5 {
+  font-size: 0.75em; }
+
+.reveal h6 {
+  font-size: 0.5em; }
+
+.reveal .small {
+  font-size: 0.9em; }
+
+.reveal .smaller {
   font-size: 0.6em; }
+
+.reveal blockquote.wide {
+  width: 90%; }
 
 .reveal ol,
 .reveal ul {
