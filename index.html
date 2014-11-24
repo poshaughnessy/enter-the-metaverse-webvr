@@ -220,15 +220,52 @@
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <div class="v-center">
-                    <img class="tech-logo" id="webgl-logo" src="img/logos/webgl-logo-colouradjust.png"/>
-                </div>
+                <img class="tech-logo push-down-3" id="webgl-logo" src="img/logos/webgl-logo-colouradjust.png"/>
+                <h4 class="push-down-1 blue-tint-light">Remember: APIs liable to change</h4>
             </section>
+
+            <!-- Also I'm going to mention Three.js as we go through, so to quickly introduce that first... -->
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="threejs.org" data-captionlink="http://threejs.org">
+                <h3 class="threejs">three.js</h3>
+                <img src="img/misc/threejs-examples.png" alt="Three.js examples"/>
+            </section>
+
+            <!--
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h2 class="v-center">VR effect</h2>
+            </section>
+            -->
+
+            <!-- VR effect -->
 
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="oculus vr" data-captionlink="http://www.oculusvr.com">
                 <h4 class="push-down-1">Render scene twice, once for each eye</h4>
                 <img class="small" src="img/screenshots/oculus-stereo-normal.jpg" alt="Stereo with no distortion"/>
                 <h5 class="blue-tint-light">WebVR provides recommended eye FOV &amp; translation</h5>
+            </section>
+
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <pre class="v-center"><code class="javascript">
+if( navigator.getVRDevices ) {
+    navigator.getVRDevices().then( onVRDevices );
+}
+
+                </code></pre>
+            </section>
+
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <pre class="v-center"><code class="javascript">function onVRDevices( vrDevices ) {
+    for( var i=0; i < vrDevices.length; i++ ) {
+        if( instance of HMDVRDevice ) {
+            vrHMD = vrDevices[i];
+            // These will be applied to 'camera' in scene
+            leftTrans = vrHMD.getEyeTranslation('left');
+            leftFOV = vrHMD.getRecommendedEyeFieldOfView(
+                    'left');
+            ...
+        }
+    }
+}</code></pre>
             </section>
 
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="oculus vr" data-captionlink="http://www.oculusvr.com">
@@ -237,58 +274,90 @@
                 <h5 class="blue-tint-light">The browser will handle the distortion</h5>
             </section>
 
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="push-down-3">Code time</h3>
-                <h4 class="push-down-2">Remember: APIs likely to change</h4>
-            </section>
-
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <!-- TODO check this is up to date! -->
-                <!-- TODO show assigning vrHMD? -->
-                <pre class="v-center"><code class="javascript">if( navigator.getVRDevices ) {
-    navigator.getVRDevices().then( handleVRDevices );
-}
+                <pre class="v-center"><code class="javascript">
+if( canvas.webkitRequestFullscreen ) {
+    canvas.webkitRequestFullscreen({vrDisplay: vrHMD});
 
-function handleVRDevices( vrDevices ) {
-    for( var i=0; i < vrDevices.length; i++ ) {
-        // If instance of HMDVRDevice...
-        // If instance of PositionSensorVRDevice...
-    }
+} else if( container.mozRequestFullScreen ) {
+    container.mozRequestFullScreen({vrDisplay: vrHMD});
 }</code></pre>
             </section>
 
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h4 class="push-down-1">Three.js has <em>VREffect</em> for this</h4>
+                <pre class="push-down-1"><code class="javascript">
+var vrEffect = new THREE.VREffect(renderer);
+
+vrEffect.render(scene, camera);
+
+...
+
+vrEffect.setFullScreen(true);
+                </code></pre>
+            </section>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center">Orientation + Position</h3>
+            </section>
+
+            <!-- VR controls -->
+
+            <!--
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <pre class="v-center"><code class="javascript">
-var leftFOV =
-    vrHMD.getRecommendedEyeFieldOfView('left');
+if( navigator.getVRDevices ) {
+    navigator.getVRDevices().then( onVRDevices );
+}
 
-var leftTrans = vrHMD.getEyeTranslation('left');
+                </code></pre>
+            </section>
+            -->
+
+            <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <pre class="v-center"><code class="javascript">
+function onVRDevices( vrDevices ) {
+    for( var i=0; i < vrDevices.length; i++ ) {
+        if( instance of PositionSensorVRDevice ) {
+            vrInput = device;
+            return;
+        }
+    }
+}
                 </code></pre>
             </section>
 
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <!-- Why do I have vrHMD above, but hmdDevice here? -->
-                <pre class="v-center"><code class="javascript">
-if( canvas.webkitRequestFullscreen ) {
-    canvas.webkitRequestFullscreen({vrDisplay: hmdDevice});
+                <pre class="v-center"><code class="javascript">function update() {
+    var state = vrInput.getState();
+    if ( state.orientation !== null ) {
+        // Apply orientation to 'cameras'
+    }
+    if ( state.position !== null ) {
+        // Apply position to 'cameras'
+    }
+}
+                </code></pre>
+            </section>
 
-} else if( container.mozRequestFullScreen ) {
-    container.mozRequestFullScreen({
-    vrDisplay: hmdDevice });
-}</code></pre>
+
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h4 class="push-down-1">Three.js has <em>VRControls</em> for this</h4>
+                <pre class="push-down-1"><code class="javascript">
+var vrControls = new THREE.VRControls(camera);
+
+...
+
+vrControls.update();
+                </code></pre>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="v-center">Rest of WebGL app as normal</h3>
-            </section>
-
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="threejs.org" data-captionlink="http://threejs.org">
-                <h3>three.js</h3>
-                <img src="img/misc/threejs-examples.png" alt="Three.js examples"/>
+                <h3 class="v-center">Add a dinosaur and...</h3>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h4>Oculus Rift TRex!</h4>
+                <h4 class="push-down-1">Oculus Rift TRex!</h4>
                 <video controls>
                     <source src="movies/trex-oculus-low.mp4" type="video/mp4;"/>
                 </video>
@@ -296,15 +365,10 @@ if( canvas.webkitRequestFullscreen ) {
                     <a href="http://www.eyeonline.com/">eyeon Software</a> for lending me the content.</small>
             </section>
 
-            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="threejs">three.js now makes it even easier</h3>
-                <!-- TODO three.js VRController & VREffect -->
-            </section>
-
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <div class="v-center">
                     <img class="tech-logo" id="css3-logo2" src="img/logos/css3-logo.png"/>
-                    <p><em>Being worked on - not in latest browser build!</em></p>
+                    <p class="push-down-1"><em>Being worked on - not in latest browser build!</em></p>
                 </div>
             </section>
 
@@ -327,9 +391,9 @@ if( canvas.webkitRequestFullscreen ) {
                 <ul class="more-text">
                     <li>No WebVR support yet</li>
                     <li class="fragment">But it's essentially a regular mobile web app
-                        <ul class="fragment no-bullet">
-                            <li>Plus HTML5 Orientation API</li>
+                        <ul class="no-bullet">
                             <li>Plus stereoscopic effect</li>
+                            <li>Plus HTML5 Orientation API</li>
                             <li>(Plus distortion)</li> <!-- We can apply our own distortion if we want to... -->
                         </ul>
                     </li>
@@ -357,23 +421,31 @@ controls.update();
                 </code></pre>
             </section>
 
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center">Add a dinosaur and...</h3>
+            </section>
+
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg" data-caption="Thanks again to DK for lending the dinosaur" data-captionclasses="darker">
-                <h4>Cardboard TRex! (Minus Cardboard)</h4>
+                <h4 class="push-down-1">Cardboard TRex! (Minus Cardboard)</h4>
                 <video controls>
                     <source src="movies/trex-cardboard-low.mp4" type="video/mp4;"/>
                 </video>
             </section>
 
+            <!--
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <!-- TODO check these are up to date! -->
                 <h3 class="push-down-2">Code examples from Google</h3>
                 <h3 class="push-down-1"><a href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h3>
                 <h3><a href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h3>
             </section>
+            -->
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="v-center">Interaction</h3>
+                <h2 class="v-center">Interaction</h2>
             </section>
+
+            <!-- TODO omni treadmill -->
+            <!-- TODO myo? -->
 
             <section data-background="img/misc/leap-vr-mount.jpg" data-caption="leap motion" data-captionclasses="darker">
                 <!-- Leap VR Mount -->
@@ -385,13 +457,15 @@ controls.update();
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg" data-caption="mind-criminal" data-captionlink="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">
-                <h3>We can now create whole new worlds!</h3>
-                <h4 class="fragment v-bottom">Let's start building the Metaverse</h4>
+                <h3 class="push-down-3">We can now create whole new worlds</h3>
+                <h3 class="fragment push-down-1"><em>So let's start building the Metaverse!</em></h3>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-more.jpg">
                 <h2 class="push-down-1">Thank you.</h2>
                 <h4 class="push-down-2">web-vr mailing list: <a href="http://bit.ly/web-vr-mailing-list">bit.ly/web-vr-mailing-list</a></h4>
+                <h4>oculus code: <a href="http://bit.ly/oculus-example">bit.ly/oculus-example</a></h4>
+                <h4>cardboard code: <a href="http://bit.ly/cardboard-example">bit.ly/cardboard-example</a></h4>
                 <h4>me: <a href="http://www.twitter.com/poshaughnessy">@poshaughnessy</a></h4>
             </section>
 

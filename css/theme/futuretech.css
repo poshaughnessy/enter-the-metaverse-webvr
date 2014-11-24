@@ -232,7 +232,8 @@ body.high-contrast {
   text-shadow: 2px 2px 2px #346484; }
 
 .reveal ul li ul {
-  padding-left: 40px; }
+  padding-left: 40px;
+  margin-top: 0.75em; }
 
 .reveal ul li ul li {
   font-size: 0.9em; }
@@ -297,11 +298,13 @@ body.high-contrast {
 
 .reveal section pre {
   width: 100%;
-  font-size: 0.95em; }
+  font-size: 0.95em;
+  margin: 0; }
   .reveal section pre code {
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.6);
-    text-shadow: none; }
+    text-shadow: none;
+    max-height: 600px; }
 
 #caption {
   font-size: 0.35em;
@@ -367,8 +370,9 @@ body.high-contrast {
   position: absolute;
   bottom: 0.5em; }
 
-h3.v-bottom {
-  width: 100%;
+h3.v-bottom,
+h4.v-bottom {
+  width: calc(100% - 60px);
   text-align: center; }
 
 .reveal iframe,
@@ -422,31 +426,9 @@ section.metaverse {
     transform: translateX(0) rotate(-720deg); }
 
 .reveal section img.tech-logo {
-  height: 250px;
-  transition: transform ease-in 0.5s, opacity linear 0.5s; }
-  .reveal section img.tech-logo:nth-child(1) {
-    margin-right: 30px; }
+  height: 250px; }
 
-#webgl-logo.grow,
-#webgl-logo2.grow {
-  transform: translateZ(150px) translateX(120px); }
-#webgl-logo.fade,
-#webgl-logo2.fade {
-  opacity: 0; }
-
-#css3-logo.grow,
-#css3-logo2.grow {
-  transform: translateZ(200px) translateX(-230px); }
-#css3-logo.fade,
-#css3-logo2.fade {
-  opacity: 0; }
-
-.reveal section img.browser-logo,
-.reveal section img.tech-logo {
-  display: inline;
-  margin-top: 30px; }
-
-.reveal .threejs span {
+.reveal .threejs {
   font-family: 'Inconsolata';
   font-weight: bold; }
 

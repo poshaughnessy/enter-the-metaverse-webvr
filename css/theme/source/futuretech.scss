@@ -184,6 +184,7 @@ body.high-contrast {
 
 .reveal ul li ul {
   padding-left: 40px;
+  margin-top: 0.75em;
 }
 
 .reveal ul li ul li {
@@ -267,11 +268,13 @@ body.high-contrast {
 .reveal section pre {
   width: 100%;
   font-size: 0.95em;
+  margin: 0;
 
   code {
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.6);
     text-shadow: none;
+    max-height: 600px;
   }
 
 }
@@ -357,8 +360,9 @@ body.high-contrast {
   bottom: 0.5em;
 }
 
-h3.v-bottom {
-  width: 100%;
+h3.v-bottom,
+h4.v-bottom {
+  width: calc(100% - 60px);
   text-align: center;
 }
 
@@ -469,49 +473,11 @@ section.metaverse {
 
 .reveal section img.tech-logo {
   height: 250px;
-  transition: transform ease-in 0.5s, opacity linear 0.5s;
-
-  &:nth-child(1) {
-    margin-right: 30px;
-  }
-}
-
-#webgl-logo,
-#webgl-logo2 {
-
-  &.grow {
-    transform: translateZ(150px) translateX(120px);
-  }
-
-  &.fade {
-    opacity: 0;
-  }
-
-}
-
-#css3-logo,
-#css3-logo2 {
-
-  &.grow {
-    transform: translateZ(200px) translateX(-230px);
-  }
-
-  &.fade {
-    opacity: 0;
-  }
-}
-
-.reveal section img.browser-logo,
-.reveal section img.tech-logo {
-  display: inline;
-  margin-top: 30px;
 }
 
 .reveal .threejs {
-  span {
-    font-family: 'Inconsolata';
-    font-weight: bold;
-  }
+  font-family: 'Inconsolata';
+  font-weight: bold;
 }
 
 .reveal .hardware-list {
