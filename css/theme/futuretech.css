@@ -232,7 +232,7 @@ body.high-contrast {
   text-shadow: 2px 2px 2px #346484; }
 
 .reveal ul li ul {
-  padding-left: 50px; }
+  padding-left: 40px; }
 
 .reveal ul li ul li {
   font-size: 0.9em; }
@@ -335,8 +335,14 @@ body.high-contrast {
 .reveal video {
   margin-bottom: 15px; }
 
+.reveal .push-down-0_5 {
+  margin-top: 0.5em; }
+
 .reveal .push-down-1 {
   margin-top: 1em; }
+
+.reveal .push-down-1_5 {
+  margin-top: 1.5em; }
 
 .reveal .push-down-2 {
   margin-top: 2em; }

@@ -39,17 +39,15 @@
                 <p class="small">Peter O'Shaughnessy <span class="subtle">|</span> <a href="https://www.twitter.com/poshaughnessy">@poshaughnessy</a></p> <!--<span class="subtle">|</span> Press <strong>f</strong> for full screen, <strong>h</strong> for high contrast</p>-->
             </section>
 
-            <!--img/backgrounds/neo-flickr-sudhee-darker.jpg-->
-            <!--
             <section class="contents blue-tint" data-background="img/backgrounds/lights-of-city-darker-more.jpg">
                 <ul class="push-down-2 no-bullet">
-                    <li>1. Why Virtual Reality?</li>
+                    <li>1. Virtual Reality</li>
                     <li>2. VR + the Web</li>
                     <li>3. Interactivity</li>
-                    <li>4. Play time!</li>
+                    <li>4. General tips</li>
+                    <li>5. Play time!</li>
                 </ul>
             </section>
-            -->
 
             <section data-background="img/photos/on-the-edge-apol.jpg" data-caption="apol photography" data-captionlink="https://flic.kr/p/6FyLC3">
                 <h2 class="blue-tint-light">We're on the edge of something...</h2>
@@ -156,12 +154,17 @@
             </section>
 
             <section class="blue-tint" data-background="img/screenshots/1920s_Berlin_Project_in_Second_Life-edit-dark.jpg">
-                <h3 class="push-down-2">&ldquo;Metaverse&rdquo;</h3>
+                <h3 class="push-down-1">&ldquo;Metaverse&rdquo;</h3>
                 <ul>
-                    <li class="fragment">Shared virtual spaces</li>
+                    <li class="fragment push-down-0_5">Shared virtual spaces</li>
                     <li class="fragment">Interconnected virtual worlds</li>
                 </ul>
             </section>
+
+            <!-- Imagine the power of Virtual Reality combined with the power of the URL -->
+            <!-- Imagine hopping from website to website in Virtual Reality - if those websites were actually immersive 3d experiences -->
+            <!-- It would be like a network of interconnected worlds... -->
+            <!-- It's the stuff of science fiction... -->
 
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <blockquote>
@@ -171,29 +174,31 @@
                 <p> - Josh Carpenter</p>
             </section>
 
+            <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
+                <h3 class="v-center">8 million web developers</h3>
+            </section>
+
             <!-- TODO: Janus VR, Second Life? -->
 
+            <!--
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <h3 class="push-down-1">VR + The Web</h3>
                 <ul>
                     <li class="fragment">Imagine the possibilities...</li>
-                    <li class="fragment">Virtual web apps possible <em>now!</em></li>
+                    <li class="fragment">Virtual reality web apps possible <em>now!</em></li>
                 </ul>
-                <!-- Imagine the power of Virtual Reality combined with the power of the URL -->
-                <!-- Imagine hopping from website to website in Virtual Reality - if those websites were actually immersive 3d experiences -->
-                <!-- It would be like a network of interconnected worlds... -->
-                <!-- It's the stuff of science fiction... -->
             </section>
+            -->
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="push-down-1">New Web API!</h3>
+                <h3 class="push-down-1">&ldquo;WebVR&rdquo;</h3>
                 <img class="browser-logo" id="ff-logo" src="img/logos/Mozilla_Firefox_3.5_logo_256.png" alt="Firefox"/>
                 <img class="browser-logo" id="chrome-logo" src="img/logos/Google_Chrome_logo.png" alt="Chrome"/>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <h3 class="push-down-1">&ldquo;WebVR&rdquo;</h3>
-                <ul class="fragment more-text">
+                <ul class="more-text">
                     <li>Device discovery</li>
                     <li>Full screen extensions</li>
                     <li>Sensor integration, e.g. orientation</li>
@@ -205,7 +210,12 @@
                 <h3 class="push-down-1">Warning!</h3>
                 <ul class="more-text">
                     <li>"Version Zero"</li>
-                    <li>Not even in alpha channels yet</li>
+                    <li>Not even in browser alpha channels yet
+                        <ul class="no-bullet">
+                            <li>Firefox: <a href="http://vrhelloworld.com/builds/">vrhelloworld.com/builds/</a></li>
+                            <li>Chrome: <a href="http://bit.ly/chrome-vr-builds">bit.ly/chrome-vr-builds</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
 
@@ -228,15 +238,14 @@
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
-                <h3 class="push-down-3">Raw WebVR code time</h3>
-                <h4 class="push-down-2">Warning: APIs likely to change</h4>
+                <h3 class="push-down-3">Code time</h3>
+                <h4 class="push-down-2">Remember: APIs likely to change</h4>
             </section>
 
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
                 <!-- TODO check this is up to date! -->
                 <!-- TODO show assigning vrHMD? -->
-                <pre class="v-center"><code class="javascript">
-if( navigator.getVRDevices ) {
+                <pre class="v-center"><code class="javascript">if( navigator.getVRDevices ) {
     navigator.getVRDevices().then( handleVRDevices );
 }
 
@@ -245,8 +254,7 @@ function handleVRDevices( vrDevices ) {
         // If instance of HMDVRDevice...
         // If instance of PositionSensorVRDevice...
     }
-}
-                </code></pre>
+}</code></pre>
             </section>
 
             <section class="blue-tint-light" data-background="img/backgrounds/lights-of-city-darker-extra.jpg">
@@ -376,16 +384,9 @@ controls.update();
                 <iframe width="100%" height="100%" src="//www.youtube.com/embed/TRhoQ6o4mI8?list=UUxPXPA8QPbuI5FyHL9_FGwQ" frameborder="0" allowfullscreen></iframe>
             </section>
 
-            <!--
-            <section>
-                <h3>Come say hi to the T-rex!</h3>
-                <img src="img/screenshots/trex-closeup.png" alt="TRex close-up"/>
-            </section>
-            -->
-
             <section class="blue-tint" data-background="img/backgrounds/universe_from_a_meadow_by_mind_criminal-d496i3j-darker.jpg" data-caption="mind-criminal" data-captionlink="http://mind-criminal.deviantart.com/art/Universe-From-a-Meadow-257284639">
-                <h3>Now we can create whole new worlds!</h3>
-                <h3 class="fragment v-bottom">What will you create?</h3>
+                <h3>We can now create whole new worlds!</h3>
+                <h4 class="fragment v-bottom">Let's start building the Metaverse</h4>
             </section>
 
             <section class="blue-tint" data-background="img/backgrounds/lights-of-city-darker-more.jpg">

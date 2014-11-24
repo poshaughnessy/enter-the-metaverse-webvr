@@ -183,7 +183,7 @@ body.high-contrast {
 }
 
 .reveal ul li ul {
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 .reveal ul li ul li {
@@ -316,8 +316,16 @@ body.high-contrast {
   margin-bottom: 15px;
 }
 
+.reveal .push-down-0_5 {
+  margin-top: 0.5em;
+}
+
 .reveal .push-down-1 {
   margin-top: 1em;
+}
+
+.reveal .push-down-1_5 {
+  margin-top: 1.5em;
 }
 
 .reveal .push-down-2 {
