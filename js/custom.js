@@ -1,6 +1,6 @@
 (function() {
 
-    var SLIDE_BROWSER_LOGOS = 29,
+    var SLIDE_BROWSER_LOGOS = 30,
         highContrastMode = false;
 
     init();
