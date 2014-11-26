@@ -342,10 +342,12 @@ body.high-contrast {
   right: auto;
   left: 15px; }
 
-#caption.darker {
+#caption.darker,
+#caption.darker a {
   color: #aaa; }
 
-#caption.lighter {
+#caption.lighter,
+#caption.lighter a {
   color: #eee; }
 
 .reveal .medium-link {
