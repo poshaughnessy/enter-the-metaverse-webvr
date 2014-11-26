@@ -11,8 +11,8 @@ Thanks to those whose images I have used. Credits and links provided on each sli
 
 ## Licence
 
-* My code: [MIT](LICENSE)
-* My slides content: [Creative Commons with Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
+* My code (i.e. custom.js): [MIT](LICENSE)
+* My slides content (i.e. the text, HTML): [Creative Commons with Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)
 
 Copyright © 2014 Peter O'Shaughnessy, [https://www.twitter.com/poshaughnessy](@poshaughnessy)
 
