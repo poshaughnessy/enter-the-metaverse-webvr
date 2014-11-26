@@ -54,6 +54,7 @@
         // Captions
         var slide = document.getElementsByTagName('section')[slideNumber],
             caption = slide.dataset.caption,
+            captionLink = slide.dataset.captionlink,
             captionClasses = slide.dataset.captionclasses;
 
         if( !caption ) {
@@ -64,7 +65,15 @@
             captionClasses = '';
         }
 
-        document.getElementById('caption').innerHTML = caption;
+        var captionHTML = '';
+
+        if( captionLink ) {
+            captionHTML += '<a href="'+captionLink+'">' + caption + '</a>';
+        } else {
+            captionHTML = caption;
+        }
+
+        document.getElementById('caption').innerHTML = captionHTML;
         document.getElementById('caption').className = captionClasses;
 
     }
