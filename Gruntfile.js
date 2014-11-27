@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 		cssmin: {
 			compress: {
 				files: {
-					'css/reveal.min.css': [ 'css/reveal.css' ]
+					'css/main.min.css': [ 'css/reveal.css', 'css/theme/futuretech.css', 'lib/css/zenburn.css' ]
 				}
 			}
 		},
